@@ -21,3 +21,4 @@ docker-compose.yml
 
 # OS
 .DS_Store
+docker-compose.yml
