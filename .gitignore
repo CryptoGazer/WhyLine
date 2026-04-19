@@ -17,6 +17,7 @@ plugin/.gradle/
 # Environment
 .env
 .env.local
+docker-compose.yml
 
 # OS
 .DS_Store
