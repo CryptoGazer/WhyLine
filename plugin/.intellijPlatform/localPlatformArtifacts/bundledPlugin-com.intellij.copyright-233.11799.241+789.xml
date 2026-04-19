@@ -1,0 +1,10 @@
+<ivy-module version="2.0">
+  <info organisation="bundledPlugin" module="com.intellij.copyright" revision="233.11799.241+789"/>
+  <configurations>
+    <conf name="default" visibility="public"/>
+  </configurations>
+  <publications>
+    <artifact name="/Users/cryptogazer/.gradle/caches/8.9/transforms/94c7d2e65c2a34079ca7375f5c1b7f31/transformed/ideaIC-2023.3-aarch64/plugins/copyright" type="directory" conf="default"/>
+  </publications>
+  <dependencies/>
+</ivy-module>

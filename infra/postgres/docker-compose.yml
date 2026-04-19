@@ -1,0 +1,19 @@
+services:
+  postgres:
+    # pgvector/pgvector:pg16 includes the pgvector extension; plain postgres:16 does not
+    image: pgvector/pgvector:pg16
+    container_name: whyline-postgres
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - whyline_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  whyline_postgres_data:

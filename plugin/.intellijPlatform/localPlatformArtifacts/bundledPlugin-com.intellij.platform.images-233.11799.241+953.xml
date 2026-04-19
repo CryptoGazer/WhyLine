@@ -1,0 +1,10 @@
+<ivy-module version="2.0">
+  <info organisation="bundledPlugin" module="com.intellij.platform.images" revision="233.11799.241+953"/>
+  <configurations>
+    <conf name="default" visibility="public"/>
+  </configurations>
+  <publications>
+    <artifact name="/Users/cryptogazer/.gradle/caches/9.0.0/transforms/01ffb8f29f7b5bdea9feb7244d063cc9/transformed/ideaIC-2023.3-aarch64/plugins/platform-images" type="directory" conf="default"/>
+  </publications>
+  <dependencies/>
+</ivy-module>

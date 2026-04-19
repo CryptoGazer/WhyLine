@@ -1,0 +1,61 @@
+<idea-plugin>
+    <id>com.whyline.plugin</id>
+    <name>WhyLine</name>
+    <vendor>WhyLine</vendor>
+
+    <description>
+        Answers "why did this code change?" directly in the IDE.
+        Select a code range, right-click, choose WhyLine: Explain Why,
+        and see the linked Jira ticket with a short explanation in the Tool Window.
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>Git4Idea</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <!-- Persistent settings (non-secret) -->
+        <applicationService
+            serviceInterface="com.whyline.plugin.settings.WhySettings"
+            serviceImplementation="com.whyline.plugin.settings.WhySettings"/>
+
+        <!-- Secure credential service (Password Safe wrapper) -->
+        <applicationService
+            serviceInterface="com.whyline.plugin.settings.WhyCredentialService"
+            serviceImplementation="com.whyline.plugin.settings.WhyCredentialService"/>
+
+        <!-- Git context service -->
+        <applicationService
+            serviceInterface="com.whyline.plugin.services.GitContextService"
+            serviceImplementation="com.whyline.plugin.services.GitContextService"/>
+
+        <!-- Settings UI under Preferences → Tools → WhyLine -->
+        <applicationConfigurable
+            parentId="tools"
+            instance="com.whyline.plugin.settings.WhySettingsConfigurable"
+            id="com.whyline.plugin.settings"
+            displayName="WhyLine"/>
+
+        <!-- Tool Window: shows analysis results -->
+        <toolWindow
+            id="WhyLine"
+            anchor="bottom"
+            factoryClass="com.whyline.plugin.toolwindow.WhyToolWindowFactory"
+            icon="/icons/whyline.svg"/>
+
+    </extensions>
+
+    <actions>
+        <!-- Primary action: right-click → WhyLine: Explain Why -->
+        <action
+            id="com.whyline.plugin.actions.ExplainWhyAction"
+            class="com.whyline.plugin.actions.ExplainWhyAction"
+            text="WhyLine: Explain Why"
+            description="Explain why the selected code changed by linking it to Jira">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift W"/>
+        </action>
+    </actions>
+
+</idea-plugin>
