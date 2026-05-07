@@ -12,6 +12,9 @@ migrations/versions/*.pyc
 .idea/
 plugin/build/
 plugin/.gradle/
+plugin/.intellijPlatform/
+plugin/bin/
+plugin/.kotlin/
 *.iml
 
 # Environment

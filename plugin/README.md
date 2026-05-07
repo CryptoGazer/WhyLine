@@ -15,7 +15,7 @@ Everything runs locally on the developer's machine — no external server requir
 3. **Multi-signal scoring** — Candidates are ranked using ten weighted signals:
 
    | Signal | Weight |
-   |---|---|
+   | --- | --- |
    | Exact Jira key in commit / branch | 100 |
    | Commit message ↔ issue summary overlap | 45 |
    | Diff tokens ↔ issue description overlap | 35 |
@@ -50,10 +50,23 @@ Everything runs locally on the developer's machine — no external server requir
 - Results appear in the **WhyLine** tool window (right side panel)
 
 The result shows:
+
 - The top matching Jira ticket key and a clickable URL in the status bar
 - A summary or explanation (LLM mode) in the main area
 - Confidence level: `HIGH` / `MEDIUM` / `LOW`
 - Contributing issues list when multiple tickets overlap
+
+---
+
+## Compatibility
+
+| OS | Status |
+| --- | --- |
+| macOS | Fully supported |
+| Linux | Fully supported |
+| Windows | Fully supported |
+
+The plugin runs entirely on the JVM — all scoring, HTTP calls (Jira, OpenAI), and credential storage are platform-independent. Git operations are spawned as a subprocess; `git` must be installed and available in `PATH` (standard on all platforms).
 
 ---
 
@@ -71,30 +84,30 @@ The plugin zip is produced in `build/distributions/`. Install via **Settings →
 
 ## Project structure
 
-```
+```text
 src/main/kotlin/com/whyline/plugin/
 ├── actions/
-│   └── ExplainWhyAction.kt       — right-click menu entry, keyboard shortcut
+│   └── ExplainWhyAction.kt        — right-click menu entry, keyboard shortcut
 ├── analyzer/
-│   ├── AnalyzerService.kt        — main pipeline orchestrator
-│   ├── EmbeddingService.kt       — OpenAI text-embedding-3-small, in-memory cache
-│   ├── GitFeaturesExtractor.kt   — extracts keywords and Jira keys from git context
-│   ├── JiraApiService.kt         — Jira REST API client, 6-hour issue cache
-│   ├── JiraIssueData.kt          — local data classes for Jira entities
-│   ├── LlmService.kt             — GPT reranking and explanation generation
-│   └── ScorerService.kt          — multi-signal weighted scorer
+│   ├── AnalyzerService.kt         — main pipeline orchestrator
+│   ├── EmbeddingService.kt        — OpenAI text-embedding-3-small, in-memory cache
+│   ├── GitFeaturesExtractor.kt    — extracts keywords and Jira keys from git context
+│   ├── JiraApiService.kt          — Jira REST API client, 6-hour issue cache
+│   ├── JiraIssueData.kt           — local data classes for Jira entities
+│   ├── LlmService.kt              — GPT reranking and explanation generation
+│   └── ScorerService.kt           — multi-signal weighted scorer
 ├── model/
-│   ├── AnalyzeRequest.kt         — CommitInfo data class
-│   └── AnalyzeResponse.kt        — result model consumed by WhyPanel
+│   ├── AnalyzeRequest.kt          — CommitInfo data class
+│   └── AnalyzeResponse.kt         — result model consumed by WhyPanel
 ├── services/
-│   └── GitContextService.kt      — git blame / log / diff via subprocess
+│   └── GitContextService.kt       — git blame / log / diff via subprocess
 ├── settings/
-│   ├── WhyCredentialService.kt   — Jira token + OpenAI key via JetBrains Password Safe
-│   ├── WhySettings.kt            — persistent non-secret settings (XML)
+│   ├── WhyCredentialService.kt    — Jira token + OpenAI key via JetBrains Password Safe
+│   ├── WhySettings.kt             — persistent non-secret settings (XML)
 │   └── WhySettingsConfigurable.kt — Settings UI panel
 └── toolwindow/
-    ├── WhyPanel.kt               — result display panel
-    └── WhyToolWindowFactory.kt   — registers the tool window
+    ├── WhyPanel.kt                — result display panel
+    └── WhyToolWindowFactory.kt    — registers the tool window
 ```
 
 ---
@@ -102,6 +115,7 @@ src/main/kotlin/com/whyline/plugin/
 ## Privacy
 
 All analysis runs locally. The only outbound network calls are:
+
 - **Jira REST API** — to fetch issue metadata using your own credentials
 - **OpenAI API** (optional) — to generate embeddings and LLM explanations using your own API key
 

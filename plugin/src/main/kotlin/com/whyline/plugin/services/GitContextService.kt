@@ -73,6 +73,7 @@ class GitContextService {
         val relPath = repoRoot.toPath()
             .relativize(File(file.path).toPath())
             .toString()
+            .replace(File.separatorChar, '/')
 
         val blameSha = blame(repoRoot, relPath, lineStart, lineEnd)
         val branch = currentBranch(repoRoot)

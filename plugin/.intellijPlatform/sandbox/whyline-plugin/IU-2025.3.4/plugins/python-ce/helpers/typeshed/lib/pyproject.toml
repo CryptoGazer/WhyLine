@@ -1,9 +1,0 @@
-# Utilities for typeshed infrastructure scripts.
-
-[project]
-name = "ts_utils"
-version = "0.0.0"
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
