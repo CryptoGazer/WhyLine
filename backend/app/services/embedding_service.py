@@ -4,7 +4,7 @@ import logging
 import os
 from typing import TYPE_CHECKING
 
-from sqlalchemy import literal_column, text
+from sqlalchemy import literal_column
 from sqlalchemy.orm import Session
 
 if TYPE_CHECKING:
@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 _EMBED_MODEL = "text-embedding-3-small"
 _EMBED_DIM = 1536
-_MAX_INPUT_CHARS = 8000  # well within 8192-token limit for this model
+_MAX_INPUT_CHARS = 8000
 
 
 def _openai_client(api_key: str | None = None):
@@ -26,7 +26,6 @@ def _openai_client(api_key: str | None = None):
 
 
 def _build_issue_text(issue: JiraIssue) -> str:
-    """Concatenate summary + description into a single embedding input."""
     parts = [issue.summary]
     if issue.description_digest:
         parts.append(issue.description_digest)
@@ -34,11 +33,6 @@ def _build_issue_text(issue: JiraIssue) -> str:
 
 
 def embed_issue(issue: JiraIssue, api_key: str | None = None) -> list[float] | None:
-    """
-    Call OpenAI embeddings API for a single Jira issue.
-    Returns the embedding vector or None on failure.
-    Does NOT write to DB — caller is responsible for flushing.
-    """
     if not api_key and not os.environ.get("OPENAI_API_KEY"):
         return None
     text_input = _build_issue_text(issue)
@@ -60,14 +54,6 @@ def vector_search(
     limit: int = 20,
     api_key: str | None = None,
 ) -> list[tuple[JiraIssue, float]]:
-    """
-    Find the most semantically similar Jira issues using cosine distance.
-    Returns a list of (issue, cosine_distance) pairs sorted by distance ascending
-    (0.0 = identical, 2.0 = opposite). Only issues with non-NULL embedding are considered.
-
-    Returns [] immediately if OPENAI_API_KEY is not set or embedding call fails,
-    so the rest of the pipeline is never blocked by this.
-    """
     if not api_key and not os.environ.get("OPENAI_API_KEY"):
         return []
 
@@ -77,10 +63,7 @@ def vector_search(
 
     from app.db.models import JiraIssue
 
-    # pgvector <=> operator: cosine distance
-    # Cast the Python list to a vector literal that PostgreSQL understands
     vec_literal = "[" + ",".join(f"{v:.8f}" for v in query_vec) + "]"
-
     dist_expr = literal_column(f"jira_issues.embedding <=> '{vec_literal}'::vector")
 
     rows = (
@@ -98,7 +81,6 @@ def vector_search(
 
 
 def _embed_query(query_text: str, api_key: str | None = None) -> list[float] | None:
-    """Embed the incoming query (commit messages + keywords) for vector search."""
     text_input = query_text[:_MAX_INPUT_CHARS]
     if not text_input.strip():
         return None

@@ -9,7 +9,6 @@ logger = logging.getLogger(__name__)
 
 
 def _format_comments(issue) -> str:
-    """Return up to 3 comment snippets (200 chars each) for the LLM prompt."""
     snippets = []
     for c in issue.jira_comments[:3]:
         text = (c.body_digest or "").strip()
@@ -64,7 +63,6 @@ def rerank_candidates(
         order_str = response.choices[0].message.content.strip()
         indices = [int(x.strip()) - 1 for x in order_str.split(",") if x.strip().isdigit()]
         reranked = [candidates_to_rank[i] for i in indices if 0 <= i < len(candidates_to_rank)]
-        # Append any candidates not mentioned by the LLM at the end
         mentioned = set(indices)
         for i, c in enumerate(candidates_to_rank):
             if i not in mentioned:
@@ -106,7 +104,6 @@ def generate_explanation(
     elif output_mode == "no_match":
         return "No matching Jira issue found for this code change."
     else:
-        # single_issue (default)
         best = top_candidates[0]
         comments_text = _format_comments(best.issue)
         prompt = (
@@ -129,7 +126,6 @@ def generate_explanation(
         return response.choices[0].message.content.strip()
     except Exception as exc:
         logger.warning("LLM explanation failed: %s", exc)
-        # Fallback: return a deterministic summary without LLM
         if top_candidates:
             best = top_candidates[0]
             return (

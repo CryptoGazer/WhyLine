@@ -32,12 +32,10 @@ def analyze(
 ) -> AnalyzeResponse:
     started_at = _now()
 
-    # 1. Cache check — return immediately on hit
     cached = get_cached_answer(db, request)
     if cached:
         return cached
 
-    # 2. Fix 2: validate repository belongs to workspace
     repo = db.query(Repository).filter_by(id=request.repository_id).first()
     if repo is None or repo.workspace_id != request.workspace_id:
         raise HTTPException(
@@ -45,23 +43,18 @@ def analyze(
             detail=f"Repository {request.repository_id} not found in workspace {request.workspace_id}",
         )
 
-    # 3. Create anchor early so errors can be recorded against it (Fix 9)
     anchor = get_or_create_anchor(db, request)
 
     try:
-        # 4. Git features
         git_features = extract_git_features(request)
 
-        # 5. Upsert nearby commits for historical signal
         _upsert_git_commits(db, request)
 
-        # 6. Fetch Jira candidates via keyword search; fetch comments when LLM is enabled
         jira_candidates = fetch_jira_candidates(
             db, request, git_features,
             fetch_comments=request.enable_llm,
         )
 
-        # 6b. Vector search — merge semantically similar issues not caught by keyword search
         jira_conn_id = _get_jira_connection_id(db, request.repository_id)
         vector_distances: dict[int, float] = {}
         if jira_conn_id is not None:
@@ -73,7 +66,6 @@ def analyze(
                 if issue.id not in keyword_ids:
                     jira_candidates.append(issue)
 
-        # 7. Scoring signals
         project_keys = _get_project_keys(db, request.repository_id)
         prior_issue_ids = _get_prior_issue_ids(db, anchor.id)
 
@@ -85,9 +77,6 @@ def analyze(
             vector_distances=vector_distances,
         )
 
-        # 8. Output mode
-        # Use combined when multiple explicit Jira keys found in code/commits,
-        # or when selection is large and multiple scored candidates exist
         if not scored:
             output_mode = "git_only" if git_features.commit_messages else "no_match"
         elif len(scored) > 1 and (
@@ -98,11 +87,9 @@ def analyze(
         else:
             output_mode = "single_issue"
 
-        # 9. LLM rerank
         if request.enable_llm and scored:
             scored = rerank_candidates(git_features=git_features, scored=scored, model=request.openai_model, api_key=request.openai_api_key)
 
-        # 10. Summary
         summary = (
             generate_explanation(git_features=git_features, top_candidates=scored[:3], output_mode=output_mode, model=request.openai_model, api_key=request.openai_api_key)
             if request.enable_llm
@@ -112,7 +99,6 @@ def analyze(
         confidence = score_to_confidence(scored[0].total_score if scored else 0)
         top_issue = scored[0].issue if scored else None
 
-        # 11. Contributing issues (combined mode)
         contributing = []
         if output_mode == "combined" and len(scored) > 1:
             for sc in scored[:3]:
@@ -144,7 +130,6 @@ def analyze(
     except HTTPException:
         raise
     except Exception as exc:
-        # Fix 9: log full traceback + record error run
         logger.exception(
             "Analysis pipeline failed repo=%d anchor=%d: %s",
             request.repository_id, anchor.id, exc,
@@ -158,12 +143,6 @@ def analyze(
         except Exception:
             logger.warning("Failed to record error run", exc_info=True)
         raise HTTPException(status_code=500, detail=f"{type(exc).__name__}: {exc}")
-
-
-# ---------------------------------------------------------------------------
-# Internal helpers
-# ---------------------------------------------------------------------------
-
 
 
 def _get_jira_connection_id(db: Session, repository_id: int) -> int | None:
@@ -221,7 +200,7 @@ def _upsert_git_commits(db: Session, request: AnalyzeRequest) -> None:
                 repository_id=request.repository_id,
                 sha=commit.sha,
                 message=commit.message,
-                diff_digest=commit.raw_diff,  # transport field raw_diff → DB column diff_digest
+                diff_digest=commit.raw_diff,
                 committed_at=committed_at,
             ))
     db.flush()
@@ -231,7 +210,6 @@ def _store_anchor_candidates(db: Session, anchor_id: int, scored) -> None:
     from datetime import timedelta
     from app.services.scorer import ScoredCandidate
 
-    # Replace previous candidate list for this anchor
     db.query(AnchorCandidate).filter_by(anchor_id=anchor_id).delete(synchronize_session=False)
 
     expires_at = _now() + timedelta(hours=48)

@@ -16,7 +16,6 @@ def _now() -> datetime:
 
 
 def get_or_create_anchor(db: Session, request: AnalyzeRequest) -> Anchor:
-    """Upsert an anchor row for the current code location."""
     anchor = (
         db.query(Anchor)
         .filter_by(
@@ -46,10 +45,6 @@ def get_or_create_anchor(db: Session, request: AnalyzeRequest) -> Anchor:
 
 
 def get_cached_answer(db: Session, request: AnalyzeRequest) -> AnalyzeResponse | None:
-    """
-    Return a cached final answer if one exists for this anchor + blame_sha with a valid TTL.
-    On hit, no Jira API call or LLM call is needed.
-    """
     anchor = (
         db.query(Anchor)
         .filter_by(
@@ -63,7 +58,6 @@ def get_cached_answer(db: Session, request: AnalyzeRequest) -> AnalyzeResponse |
     if anchor is None:
         return None
 
-    # A blame_sha mismatch means the code changed — treat as cache miss
     if request.blame_sha and anchor.blame_sha and anchor.blame_sha != request.blame_sha:
         return None
 
@@ -110,7 +104,6 @@ def store_answer(
     primary_issue_id: int | None = None,
     model_name: str | None = None,
 ) -> None:
-    """Write the final answer to final_answers. Delete stale entries for this anchor first."""
     db.query(FinalAnswer).filter(
         and_(
             FinalAnswer.anchor_id == anchor.id,
@@ -125,7 +118,7 @@ def store_answer(
         confidence=response.confidence,
         output_mode=response.output_mode,
         evidence_text=response.evidence_text,
-        blame_sha=anchor.blame_sha,  # fixed: was `response.evidence_text and anchor.blame_sha`
+        blame_sha=anchor.blame_sha,
         model_name=model_name,
         expires_at=_now() + timedelta(hours=_CACHE_TTL_HOURS),
     )

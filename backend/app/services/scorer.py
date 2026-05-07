@@ -9,7 +9,6 @@ from app.services.git_features import GitFeatures
 
 logger = logging.getLogger(__name__)
 
-# Weights aligned with ARCHITECTURE.md scoring table
 _W_EXACT_KEY = 100
 _W_MSG_SUMMARY = 45
 _W_DIFF_DESC = 35
@@ -19,9 +18,9 @@ _W_TIME_PROXIMITY = 20
 _W_HISTORICAL = 15
 _W_PROJECT_WHITELIST = 10
 _W_LABELS = 5
-_W_VECTOR_SIMILARITY = 35  # cosine similarity bonus: (1 - distance) * weight
+_W_VECTOR_SIMILARITY = 35
 
-_MIN_SCORE_THRESHOLD = 5  # candidates below this are discarded
+_MIN_SCORE_THRESHOLD = 5
 
 
 @dataclass
@@ -39,7 +38,6 @@ def _token_overlap(a: set[str], b: set[str]) -> float:
 
 
 def _time_proximity_score(commit_date_str: str | None, issue: JiraIssue) -> float:
-    """Returns 0.0–1.0 based on how close the commit date is to the issue dates."""
     if not commit_date_str:
         return 0.0
     try:
@@ -50,14 +48,12 @@ def _time_proximity_score(commit_date_str: str | None, issue: JiraIssue) -> floa
     best = 0.0
     for remote_dt in filter(None, [issue.created_at_remote, issue.updated_at_remote]):
         diff_days = abs((commit_dt - remote_dt).days)
-        # Full score within 7 days, linear decay to zero at 180 days
         score = max(0.0, 1.0 - diff_days / 180.0)
         best = max(best, score)
     return best
 
 
 def _issue_text_tokens(issue: JiraIssue) -> tuple[set[str], set[str], set[str]]:
-    """Returns (summary_tokens, description_tokens, label_tokens)."""
     import re
 
     def tok(text: str | None) -> set[str]:
@@ -81,10 +77,6 @@ def score_candidates(
     prior_issue_ids: set[int] | None = None,
     vector_distances: dict[int, float] | None = None,
 ) -> list[ScoredCandidate]:
-    """
-    Applies the weighted multi-signal scorer from ARCHITECTURE.md.
-    Returns candidates sorted by total_score descending, above threshold.
-    """
     results: list[ScoredCandidate] = []
     whitelist = set(project_keys_whitelist or [])
     priors = prior_issue_ids or set()
@@ -94,11 +86,9 @@ def score_candidates(
         summary_toks, desc_toks, label_toks = _issue_text_tokens(issue)
         breakdown: dict[str, float] = {}
 
-        # Exact Jira key match — strong prior but not absolute
         exact_key_match = issue.issue_key in git_features.explicit_jira_keys
         breakdown["exact_key"] = _W_EXACT_KEY if exact_key_match else 0.0
 
-        # Semantic signals
         msg_overlap = _token_overlap(git_features.message_keywords, summary_toks)
         breakdown["msg_summary"] = _W_MSG_SUMMARY * msg_overlap
 
@@ -118,22 +108,16 @@ def score_candidates(
         identifier_overlap = _token_overlap(git_features.identifier_keywords, summary_toks | desc_toks)
         breakdown["identifier"] = _W_IDENTIFIER * identifier_overlap
 
-        # Temporal signal
         time_score = _time_proximity_score(git_features.commit_date, issue)
         breakdown["time_proximity"] = _W_TIME_PROXIMITY * time_score
 
-        # Historical prior
         breakdown["historical"] = _W_HISTORICAL if issue.id in priors else 0.0
-
-        # Project whitelist bonus
         breakdown["project_whitelist"] = _W_PROJECT_WHITELIST if issue.project_key in whitelist else 0.0
 
-        # Labels overlap
         label_overlap = _token_overlap(git_features.identifier_keywords, label_toks)
         breakdown["labels"] = _W_LABELS * label_overlap
 
-        # Vector similarity: cosine distance in [0, 2]; convert to similarity in [0, 1]
-        # distance=0 → identical → full weight; distance≥1 → 0 bonus
+        # cosine distance in [0, 2]; convert to similarity in [0, 1]
         cosine_dist = vdist.get(issue.id)
         if cosine_dist is not None:
             similarity = max(0.0, 1.0 - cosine_dist)
@@ -143,8 +127,6 @@ def score_candidates(
 
         total = sum(breakdown.values())
 
-        # Penalize exact-key matches where semantic overlap is near zero
-        # (key is a strong prior, not absolute truth per ARCHITECTURE.md)
         if exact_key_match and (msg_overlap + diff_desc_overlap + identifier_overlap) < 0.05:
             total *= 0.5
             breakdown["_exact_key_penalty"] = -total * 0.5

@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 _JIRA_ISSUE_STALE_HOURS = 6
 _MAX_KEYWORD_TERMS = 8
-_MAX_COMMENTS_PER_ISSUE = 10  # cap to avoid huge payloads
+_MAX_COMMENTS_PER_ISSUE = 10
 
 
 def fetch_jira_candidates(
@@ -25,11 +25,6 @@ def fetch_jira_candidates(
     git_features: GitFeatures,
     fetch_comments: bool = False,
 ) -> list[JiraIssue]:
-    """
-    Returns JiraIssue rows relevant to the current code change.
-    When fetch_comments=True (LLM mode), also fetches and upserts Jira comments
-    so they are available to the scorer and LLM prompt.
-    """
     conn = _get_jira_connection(db, request.repository_id)
     if conn is None:
         logger.warning("No active Jira connection for repository %d", request.repository_id)
@@ -61,12 +56,7 @@ def fetch_jira_candidates(
     return results
 
 
-# ---------------------------------------------------------------------------
-# Jira comments
-# ---------------------------------------------------------------------------
-
 def _fetch_and_upsert_comments(db: Session, conn: JiraConnection, issue: JiraIssue) -> None:
-    """Fetch comments from Jira API and upsert into jira_comments."""
     raw_comments = _api_get_comments(conn, issue.issue_key)
     if not raw_comments:
         return
@@ -127,10 +117,6 @@ def _api_get_comments(conn: JiraConnection, issue_key: str) -> list[dict]:
         logger.warning("Jira GET comments for %s failed: %s", issue_key, exc)
         return []
 
-
-# ---------------------------------------------------------------------------
-# Internal helpers
-# ---------------------------------------------------------------------------
 
 def _get_jira_connection(db: Session, repository_id: int) -> JiraConnection | None:
     repo = db.query(Repository).filter_by(id=repository_id, is_active=True).first()
@@ -234,7 +220,6 @@ def _upsert_issue(db: Session, conn: JiraConnection, raw: dict[str, Any]) -> Jir
         existing.updated_at_remote = _parse_dt(updated_str)
         existing.synced_at = now
         db.flush()
-        # Re-embed only when text content changed or embedding is missing
         if text_changed or existing.embedding is None:
             vec = embed_issue(existing)
             if vec is not None:

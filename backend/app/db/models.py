@@ -25,8 +25,6 @@ from app.db.base import Base
 
 
 class Workspace(Base):
-    """Top-level logical container: one team / one installation context."""
-
     __tablename__ = "workspaces"
     __table_args__ = (
         UniqueConstraint("slug", name="uq_workspaces_slug"),
@@ -45,11 +43,8 @@ class Workspace(Base):
 
 
 class JiraConnection(Base):
-    """Jira instance credentials and project scope for one workspace."""
-
     __tablename__ = "jira_connections"
     __table_args__ = (
-        # One workspace cannot have two connections to the same Jira base URL.
         UniqueConstraint("workspace_id", "base_url", name="uq_jira_connections_workspace_url"),
         Index("ix_jira_connections_workspace_id", "workspace_id"),
         Index("ix_jira_connections_is_active", "is_active"),
@@ -59,7 +54,6 @@ class JiraConnection(Base):
     workspace_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("workspaces.id", ondelete="RESTRICT"), nullable=False)
     base_url: Mapped[str] = mapped_column(Text, nullable=False)
     auth_type: Mapped[str] = mapped_column(String(50), nullable=False, server_default="api_token")
-    # Jira basic-auth credentials (email + API token). In production: encrypt at rest.
     auth_email: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     auth_token: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     project_keys_json: Mapped[Optional[dict]] = mapped_column(JSONB, nullable=True)
@@ -72,11 +66,8 @@ class JiraConnection(Base):
 
 
 class Repository(Base):
-    """One analyzed Git repository, scoped to a workspace and linked to a Jira connection."""
-
     __tablename__ = "repositories"
     __table_args__ = (
-        # One workspace cannot register the same repository twice.
         UniqueConstraint("workspace_id", "remote_url_hash", name="uq_repositories_workspace_url"),
         Index("ix_repositories_workspace_id", "workspace_id"),
         Index("ix_repositories_jira_connection_id", "jira_connection_id"),
@@ -102,8 +93,6 @@ class Repository(Base):
 
 
 class GitCommit(Base):
-    """Digest of a commit that was actually used in an analysis run. Not a full git log."""
-
     __tablename__ = "git_commits"
     __table_args__ = (
         UniqueConstraint("repository_id", "sha", name="uq_git_commits_repository_sha"),
@@ -124,8 +113,6 @@ class GitCommit(Base):
 
 
 class JiraIssue(Base):
-    """Server-side normalized copy of a fetched Jira issue."""
-
     __tablename__ = "jira_issues"
     __table_args__ = (
         UniqueConstraint("jira_connection_id", "issue_key", name="uq_jira_issues_connection_key"),
@@ -154,8 +141,6 @@ class JiraIssue(Base):
 
 
 class JiraComment(Base):
-    """Normalized Jira comment, stored separately to avoid bloating jira_issues rows."""
-
     __tablename__ = "jira_comments"
     __table_args__ = (
         UniqueConstraint("jira_issue_id", "remote_comment_id", name="uq_jira_comments_issue_remote"),
@@ -176,8 +161,6 @@ class JiraComment(Base):
 
 
 class Anchor(Base):
-    """A code location the user asked 'why' about. One anchor per file+line selection."""
-
     __tablename__ = "anchors"
     __table_args__ = (
         CheckConstraint("line_start <= line_end", name="ck_anchors_line_range"),
@@ -208,8 +191,6 @@ class Anchor(Base):
 
 
 class AnchorSegment(Base):
-    """Optional sub-zone of an anchor when a selection spans multiple logical areas."""
-
     __tablename__ = "anchor_segments"
     __table_args__ = (
         UniqueConstraint("anchor_id", "segment_index", name="uq_anchor_segments_anchor_index"),
@@ -225,7 +206,6 @@ class AnchorSegment(Base):
     line_end: Mapped[int] = mapped_column(Integer, nullable=False)
     segment_hash: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     blame_sha: Mapped[Optional[str]] = mapped_column(String(64), nullable=True)
-    # SET NULL: deleting a jira_issue does not destroy the segment, just clears the hint.
     top_issue_id: Mapped[Optional[int]] = mapped_column(BigInteger, ForeignKey("jira_issues.id", ondelete="SET NULL"), nullable=True)
     confidence: Mapped[Optional[str]] = mapped_column(String(32), nullable=True)
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), nullable=False, server_default=func.now())
@@ -236,8 +216,6 @@ class AnchorSegment(Base):
 
 
 class AnchorCandidate(Base):
-    """Intermediate candidate cache: Jira issues considered for an anchor before final ranking."""
-
     __tablename__ = "anchor_candidates"
     __table_args__ = (
         Index("ix_anchor_candidates_anchor_id", "anchor_id"),
@@ -249,11 +227,9 @@ class AnchorCandidate(Base):
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     anchor_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("anchors.id", ondelete="CASCADE"), nullable=False)
-    # Nullable: candidate may belong to the whole anchor, not a specific segment.
     segment_id: Mapped[Optional[int]] = mapped_column(BigInteger, ForeignKey("anchor_segments.id", ondelete="CASCADE"), nullable=True)
     jira_issue_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("jira_issues.id", ondelete="CASCADE"), nullable=False)
     deterministic_score: Mapped[Decimal] = mapped_column(Numeric(10, 4), nullable=False, server_default="0")
-    # Nullable: LLM rerank may not have run yet.
     llm_score: Mapped[Optional[Decimal]] = mapped_column(Numeric(10, 4), nullable=True)
     rank_position: Mapped[int] = mapped_column(Integer, nullable=False)
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), nullable=False, server_default=func.now())
@@ -265,8 +241,6 @@ class AnchorCandidate(Base):
 
 
 class FinalAnswer(Base):
-    """Main user-facing cache. Returned directly to plugin on cache hit."""
-
     __tablename__ = "final_answers"
     __table_args__ = (
         Index("ix_final_answers_anchor_id", "anchor_id"),
@@ -279,12 +253,9 @@ class FinalAnswer(Base):
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     anchor_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("anchors.id", ondelete="CASCADE"), nullable=False)
     segment_id: Mapped[Optional[int]] = mapped_column(BigInteger, ForeignKey("anchor_segments.id", ondelete="CASCADE"), nullable=True)
-    # SET NULL: answer stays readable even if the source issue was purged.
     primary_issue_id: Mapped[Optional[int]] = mapped_column(BigInteger, ForeignKey("jira_issues.id", ondelete="SET NULL"), nullable=True)
     summary: Mapped[str] = mapped_column(Text, nullable=False)
-    # Values: high | medium | low | no_match
     confidence: Mapped[str] = mapped_column(String(32), nullable=False)
-    # Values: single_issue | combined | grouped | git_only | no_match
     output_mode: Mapped[Optional[str]] = mapped_column(String(32), nullable=True)
     evidence_text: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     blame_sha: Mapped[Optional[str]] = mapped_column(String(64), nullable=True)
@@ -299,8 +270,6 @@ class FinalAnswer(Base):
 
 
 class AnalysisRun(Base):
-    """Trace record for every analysis execution. Used for debugging and demo diagnostics."""
-
     __tablename__ = "analysis_runs"
     __table_args__ = (
         Index("ix_analysis_runs_repository_id", "repository_id"),
@@ -315,7 +284,6 @@ class AnalysisRun(Base):
     status: Mapped[str] = mapped_column(String(32), nullable=False)
     started_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), nullable=False, server_default=func.now())
     finished_at: Mapped[Optional[datetime]] = mapped_column(TIMESTAMP(timezone=True), nullable=True)
-    # SET NULL: run record stays for debugging even if the matched issue was purged.
     top_issue_id: Mapped[Optional[int]] = mapped_column(BigInteger, ForeignKey("jira_issues.id", ondelete="SET NULL"), nullable=True)
     confidence: Mapped[Optional[str]] = mapped_column(String(32), nullable=True)
     error_text: Mapped[Optional[str]] = mapped_column(Text, nullable=True)

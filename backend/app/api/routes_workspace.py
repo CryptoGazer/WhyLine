@@ -25,13 +25,6 @@ def register_workspace(
     body: WorkspaceRegisterRequest,
     db: Session = Depends(get_db),
 ) -> WorkspaceRegisterResponse:
-    """
-    Create a workspace + placeholder Jira connection + default repository.
-    Idempotent: if slug already exists, returns existing ids.
-    Real Jira credentials are filled later via PUT /workspace/{id}/jira-connection.
-    """
-    import hashlib
-
     workspace = db.query(Workspace).filter_by(slug=body.slug).first()
     if workspace is None:
         workspace = Workspace(name=body.name, slug=body.slug)
@@ -39,7 +32,6 @@ def register_workspace(
         db.flush()
         logger.info("Created workspace id=%d slug=%s", workspace.id, body.slug)
 
-    # Ensure a placeholder Jira connection exists (required FK for Repository)
     conn = db.query(JiraConnection).filter_by(workspace_id=workspace.id).first()
     if conn is None:
         conn = JiraConnection(
@@ -50,7 +42,6 @@ def register_workspace(
         )
         db.add(conn)
         db.flush()
-        logger.info("Created placeholder jira_connection id=%d", conn.id)
 
     repo = db.query(Repository).filter_by(workspace_id=workspace.id).first()
     if repo is None:
@@ -62,7 +53,6 @@ def register_workspace(
         )
         db.add(repo)
         db.flush()
-        logger.info("Created repository id=%d for workspace %d", repo.id, workspace.id)
 
     db.commit()
     return WorkspaceRegisterResponse(workspace_id=workspace.id, repository_id=repo.id)
@@ -74,11 +64,6 @@ def setup_jira_connection(
     body: JiraConnectionSetupRequest,
     db: Session = Depends(get_db),
 ) -> JiraConnectionSetupResponse:
-    """
-    Upsert Jira credentials for a workspace + link them to a repository.
-    Called from plugin Settings → Apply when Jira fields are filled.
-    Also updates remote_url_hash on the repository if remote_url is provided (Fix 5).
-    """
     workspace = db.query(Workspace).filter_by(id=workspace_id).first()
     if workspace is None:
         raise HTTPException(status_code=404, detail=f"Workspace {workspace_id} not found")
@@ -90,7 +75,6 @@ def setup_jira_connection(
             detail=f"Repository {body.repository_id} not found in workspace {workspace_id}",
         )
 
-    # Upsert jira_connection by (workspace_id, base_url)
     base_url = body.jira_base_url.rstrip("/")
     conn = db.query(JiraConnection).filter_by(workspace_id=workspace_id, base_url=base_url).first()
     if conn is None:
@@ -109,17 +93,12 @@ def setup_jira_connection(
         conn.auth_email = body.jira_email
         conn.auth_token = body.jira_token
         conn.is_active = True
-        logger.info("Updated jira_connection id=%d for workspace %d", conn.id, workspace_id)
 
-    # Link repository to this connection
     repo.jira_connection_id = conn.id
 
-    # Fix 5: update remote_url_hash
     if body.remote_url:
         repo.remote_url_hash = hashlib.sha256(body.remote_url.encode()).hexdigest()
-        logger.info("Updated remote_url_hash for repository %d", repo.id)
     elif repo.remote_url_hash in (None, "", "hash_placeholder"):
-        # Derive a stable hash from workspace + repo id when no URL provided
         repo.remote_url_hash = hashlib.sha256(
             f"{workspace_id}:{body.repository_id}".encode()
         ).hexdigest()
@@ -138,7 +117,6 @@ def clear_cache(
     workspace_id: int,
     db: Session = Depends(get_db),
 ) -> dict:
-    """Delete all cached final_answers for every repository in this workspace."""
     from app.db.models import Anchor, FinalAnswer
 
     workspace = db.query(Workspace).filter_by(id=workspace_id).first()
