@@ -17,9 +17,12 @@ _EMBED_DIM = 1536
 _MAX_INPUT_CHARS = 8000  # well within 8192-token limit for this model
 
 
-def _openai_client():
+def _openai_client(api_key: str | None = None):
     from openai import OpenAI
-    return OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    key = api_key or os.environ.get("OPENAI_API_KEY")
+    if not key:
+        raise ValueError("No OpenAI API key available")
+    return OpenAI(api_key=key)
 
 
 def _build_issue_text(issue: JiraIssue) -> str:
@@ -30,19 +33,19 @@ def _build_issue_text(issue: JiraIssue) -> str:
     return " ".join(parts)[:_MAX_INPUT_CHARS]
 
 
-def embed_issue(issue: JiraIssue) -> list[float] | None:
+def embed_issue(issue: JiraIssue, api_key: str | None = None) -> list[float] | None:
     """
     Call OpenAI embeddings API for a single Jira issue.
     Returns the embedding vector or None on failure.
     Does NOT write to DB — caller is responsible for flushing.
     """
-    if not os.environ.get("OPENAI_API_KEY"):
+    if not api_key and not os.environ.get("OPENAI_API_KEY"):
         return None
     text_input = _build_issue_text(issue)
     if not text_input.strip():
         return None
     try:
-        client = _openai_client()
+        client = _openai_client(api_key)
         resp = client.embeddings.create(model=_EMBED_MODEL, input=text_input)
         return resp.data[0].embedding
     except Exception as exc:
@@ -55,6 +58,7 @@ def vector_search(
     jira_connection_id: int,
     query_text: str,
     limit: int = 20,
+    api_key: str | None = None,
 ) -> list[tuple[JiraIssue, float]]:
     """
     Find the most semantically similar Jira issues using cosine distance.
@@ -64,10 +68,10 @@ def vector_search(
     Returns [] immediately if OPENAI_API_KEY is not set or embedding call fails,
     so the rest of the pipeline is never blocked by this.
     """
-    if not os.environ.get("OPENAI_API_KEY"):
+    if not api_key and not os.environ.get("OPENAI_API_KEY"):
         return []
 
-    query_vec = _embed_query(query_text)
+    query_vec = _embed_query(query_text, api_key=api_key)
     if query_vec is None:
         return []
 
@@ -93,13 +97,13 @@ def vector_search(
     return [(issue, float(dist)) for issue, dist in rows]
 
 
-def _embed_query(query_text: str) -> list[float] | None:
+def _embed_query(query_text: str, api_key: str | None = None) -> list[float] | None:
     """Embed the incoming query (commit messages + keywords) for vector search."""
     text_input = query_text[:_MAX_INPUT_CHARS]
     if not text_input.strip():
         return None
     try:
-        client = _openai_client()
+        client = _openai_client(api_key)
         resp = client.embeddings.create(model=_EMBED_MODEL, input=text_input)
         return resp.data[0].embedding
     except Exception as exc:

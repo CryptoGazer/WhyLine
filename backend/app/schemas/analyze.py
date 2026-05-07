@@ -36,8 +36,10 @@ class AnalyzeRequest(BaseModel):
     nearby_commits: list[CommitInfo] = []
 
     # LLM settings forwarded from plugin
-    enable_llm: bool = True
+    enable_llm: bool = False
     openai_model: str = "gpt-4o"
+    # Per-user OpenAI key — used instead of server env var when provided
+    openai_api_key: str | None = None
 
 
 class ContributingIssue(BaseModel):

@@ -66,7 +66,7 @@ def analyze(
         vector_distances: dict[int, float] = {}
         if jira_conn_id is not None:
             query_text = " ".join(git_features.commit_messages[:3])
-            vec_results = vector_search(db, jira_conn_id, query_text, limit=20)
+            vec_results = vector_search(db, jira_conn_id, query_text, limit=20, api_key=request.openai_api_key)
             keyword_ids = {issue.id for issue in jira_candidates}
             for issue, dist in vec_results:
                 vector_distances[issue.id] = dist
@@ -100,11 +100,11 @@ def analyze(
 
         # 9. LLM rerank
         if request.enable_llm and scored:
-            scored = rerank_candidates(git_features=git_features, scored=scored, model=request.openai_model)
+            scored = rerank_candidates(git_features=git_features, scored=scored, model=request.openai_model, api_key=request.openai_api_key)
 
         # 10. Summary
         summary = (
-            generate_explanation(git_features=git_features, top_candidates=scored[:3], output_mode=output_mode, model=request.openai_model)
+            generate_explanation(git_features=git_features, top_candidates=scored[:3], output_mode=output_mode, model=request.openai_model, api_key=request.openai_api_key)
             if request.enable_llm
             else _fallback_summary(scored, git_features, output_mode)
         )

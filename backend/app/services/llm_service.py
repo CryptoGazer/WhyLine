@@ -18,10 +18,13 @@ def _format_comments(issue) -> str:
     return "\n".join(snippets)
 
 
-def _make_client():
+def _make_client(api_key: str | None = None):
     from openai import OpenAI
     import os
-    return OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    key = api_key or os.environ.get("OPENAI_API_KEY")
+    if not key:
+        raise ValueError("No OpenAI API key available")
+    return OpenAI(api_key=key)
 
 
 def rerank_candidates(
@@ -29,6 +32,7 @@ def rerank_candidates(
     scored: list[ScoredCandidate],
     model: str,
     top_n: int = 10,
+    api_key: str | None = None,
 ) -> list[ScoredCandidate]:
     if not scored:
         return scored
@@ -50,7 +54,7 @@ def rerank_candidates(
     )
 
     try:
-        client = _make_client()
+        client = _make_client(api_key)
         response = client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
@@ -76,6 +80,7 @@ def generate_explanation(
     top_candidates: list[ScoredCandidate],
     output_mode: str,
     model: str,
+    api_key: str | None = None,
 ) -> str:
     if not top_candidates and output_mode not in ("git_only", "no_match"):
         return "No matching Jira issue found for this code change."
@@ -114,7 +119,7 @@ def generate_explanation(
         )
 
     try:
-        client = _make_client()
+        client = _make_client(api_key)
         response = client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],

@@ -27,15 +27,23 @@ WhyLinePlugin-1.0-SNAPSHOT.zip
 
 After installation, open **Settings → Tools → WhyLine** and fill in the following:
 
-- **Backend URL** — `http://3.126.4.198:8000`
-- **Workspace ID** — `2`
-- **Repository ID** — `1`
-- **Enable LLM features** — check this to enable GPT-powered explanations
-- **Jira Email** — your Atlassian account email
-- **Jira API token** — generate one at id.atlassian.com under Security → API tokens
-- **Jira Base URL** — `https://your-site.atlassian.net`
+#### Connection
 
-Click **OK**. The plugin will register your Jira credentials with the backend automatically.
+- **Backend URL** — URL of the WhyLine backend server (e.g. `http://3.126.4.198:8000`)
+- **Workspace ID / Repository ID** — leave blank, then click **Auto-Register Workspace** to fill these automatically
+
+#### OpenAI *(optional — required for GPT explanations)*
+
+- **API key** — your personal OpenAI key from [platform.openai.com](https://platform.openai.com). Stored locally in the JetBrains Password Safe; never sent to the server except as part of each analysis request.
+- **Enable LLM features** — becomes available once a key is entered. When enabled, GPT re-ranks Jira candidates and generates a 2–4 sentence explanation.
+
+#### Jira
+
+- **Email** — your Atlassian account email
+- **API token** — generate one at id.atlassian.com under Security → API tokens
+- **Base URL** — `https://your-site.atlassian.net`
+
+Click **OK**. The plugin sends your Jira credentials to the backend (stored server-side, never returned to the client).
 
 ### Usage
 
