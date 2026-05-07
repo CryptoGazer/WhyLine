@@ -9,18 +9,11 @@ import com.intellij.openapi.components.Storage
 class WhySettings : PersistentStateComponent<WhySettings.State> {
 
     data class State(
-        var backendUrl: String = "http://localhost:8000",
-        var enableLlm: Boolean = true,
-        // useMyOpenAiKey: key stored in JetBrains Password Safe, sent per-request in header.
-        // storeKeyOnServer: key is also pushed to the workspace record in the backend DB
-        //   so all team members share it without each configuring their own.
-        var useMyOpenAiKey: Boolean = false,
-        var storeKeyOnServer: Boolean = false,
+        var enableLlm: Boolean = false,
         var openAiModel: String = "gpt-4o",
-        // Workspace / repo IDs — set once during onboarding
-        // TODO: replace with per-project settings once project-level config is added
-        var workspaceId: Int = 1,
-        var repositoryId: Int = 1,
+        var jiraEmail: String = "",
+        var jiraBaseUrl: String = "",
+        var jiraProjectKeys: String = "",
     )
 
     private var state = State()

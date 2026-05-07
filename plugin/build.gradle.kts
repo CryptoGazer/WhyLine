@@ -1,104 +1,63 @@
-import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+plugins {
+    id("java")
+    id("org.jetbrains.kotlin.jvm") version "2.3.0"
+    id("org.jetbrains.intellij.platform") version "2.14.0"
+}
+
+group = "org.example"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
-
     intellijPlatform {
         defaultRepositories()
     }
 }
 
+// Read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
 dependencies {
     intellijPlatform {
-        intellijIdea("2025.3")
+        local("/Applications/IntelliJ IDEA.app")
+        testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
 
+        bundledPlugin("org.jetbrains.kotlin")
+        bundledPlugin("com.intellij.modules.json")
         bundledPlugin("com.intellij.java")
-
-        testFramework(TestFrameworkType.Platform)
+        compatiblePlugin("PythonCore")
     }
 
-    testImplementation("junit:junit:4.13.2")
-    // other dependencies, e.g., 3rd-party libraries
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 
-//plugins {
-//    id("java")
-//    id("org.jetbrains.kotlin.jvm") version "1.9.25"
-//    id("org.jetbrains.intellij.platform") version "2.1.0"
-//}
-//
-//group = providers.gradleProperty("pluginGroup").get()
-//version = providers.gradleProperty("pluginVersion").get()
-//
-//repositories {
-//    mavenCentral()
-//    intellijPlatform {
-//        defaultRepositories()
-//    }
-//}
-//
-//dependencies {
-//
-//    intellijPlatform {
-//        create(providers.gradleProperty("platformType"), providers.gradleProperty("platformVersion"))
-//        bundledPlugin("com.intellij.java")
-//        bundledPlugin("Git4Idea")
-//        testFramework(TestFrameworkType.Platform)
-//    }
-//    // JSON serialization for backend requests
-//    implementation("com.google.code.gson:gson:2.10.1")
-//}
-//
-//intellijPlatform {
-//    pluginConfiguration {
-//        name = providers.gradleProperty("pluginName")
-//        version = providers.gradleProperty("pluginVersion")
-//        ideaVersion {
-//            sinceBuild = providers.gradleProperty("pluginSinceBuild")
-//            untilBuild = providers.gradleProperty("pluginUntilBuild")
-//        }
-//    }
-//    signing { }
-//    publishing { }
-//}
-//
-//kotlin {
-//    jvmToolchain(17)
-//}
-//
-//// ---------------------------------------------------------------------------
-//// Local deployment: builds the plugin zip and unpacks it directly into
-//// the running IntelliJ IDEA's plugins directory.
-////
-//// Usage:
-////   1. Set localIdePluginsDir in gradle.properties (see the commented example)
-////   2. Run the task: Gradle panel → Tasks → whyline → deployToLocalIde
-////   3. Restart IntelliJ IDEA (File → Invalidate Caches → Just Restart)
-////
-//// After first setup you can also use "Reload Plugin from Disk" via
-////   Help → Find Action → "Reload Plugin from Disk"  (no full restart needed)
-//// ---------------------------------------------------------------------------
-val localIdePluginsDir: String? = providers.gradleProperty("localIdePluginsDir").orNull
-//
-//tasks.register<Copy>("deployToLocalIde") {
-//    group = "whyline"
-//    description = "Builds plugin zip and deploys it to the local IntelliJ plugins directory."
-//    dependsOn("buildPlugin")
-//
-//    doFirst {
-//        if (localIdePluginsDir == null) {
-//            throw GradleException(
-//                "localIdePluginsDir is not set.\n" +
-//                "Add it to plugin/gradle.properties, for example:\n" +
-//                "  localIdePluginsDir=/Users/you/Library/Application Support/JetBrains/IntelliJIdea2024.3/plugins"
-//            )
-//        }
-//        // Remove the old installation so stale files don't linger.
-//        delete("$localIdePluginsDir/WhyLine")
-//        logger.lifecycle("Deploying WhyLine plugin to: $localIdePluginsDir")
-//    }
-//
-//    val zipFile = layout.buildDirectory.file("distributions/WhyLine-${project.version}.zip")
-//    from(zipTree(zipFile))
-//    into(localIdePluginsDir ?: error("unreachable"))
-//}
+intellijPlatform {
+    pluginConfiguration {
+        ideaVersion {
+            sinceBuild = "233"
+            untilBuild = "253.*"
+        }
+
+        changeNotes = """
+            <ul>
+                <li>Initial public release</li>
+                <li>Multi-signal Jira matching via Git blame, commit history, and diff analysis</li>
+                <li>Optional LLM mode with per-user OpenAI API key</li>
+                <li>Auto-Register Workspace button for one-click setup</li>
+                <li>Secure credential storage via JetBrains Password Safe</li>
+            </ul>
+        """.trimIndent()
+    }
+}
+
+tasks {
+    // Set the JVM compatibility versions
+    withType<JavaCompile> {
+        sourceCompatibility = "21"
+        targetCompatibility = "21"
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+    }
+}

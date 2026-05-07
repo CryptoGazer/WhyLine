@@ -1,0 +1,572 @@
+2026-05-07 18:06:29,345 [      5]   INFO - #c.i.p.i.b.AppStarter - ------------------------------------------------------ IDE STARTED ------------------------------------------------------
+2026-05-07 18:06:29,347 [      7]   INFO - #c.i.p.i.b.AppStarter - skipping shell environment: the IDE is likely launched from a terminal (SHLVL=1)
+2026-05-07 18:06:29,349 [      9]   INFO - #c.i.p.i.b.AppStarter - Will skip the config import to directory "/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/config" (exists = true). Current entries: "options", "disabled_plugins.txt".
+2026-05-07 18:06:29,408 [     68]   INFO - #c.i.p.i.b.AppStarter - JNA library (64-bit) loaded in 61 ms
+2026-05-07 18:06:29,413 [     73]   INFO - #c.i.p.i.b.AppStarter - IDE: IntelliJ IDEA (build #IU-253.32098.37, Tue, 17 Mar 2026 05:01:00 GMT)
+2026-05-07 18:06:29,413 [     73]   INFO - #c.i.p.i.b.AppStarter - OS: macOS (15.1.1)
+2026-05-07 18:06:29,413 [     73]   INFO - #c.i.p.i.b.AppStarter - JRE: 21.0.10+7-b1163.110, aarch64 (JetBrains s.r.o.)
+2026-05-07 18:06:29,413 [     73]   INFO - #c.i.p.i.b.AppStarter - JVM: 21.0.10+7-b1163.110 (OpenJDK 64-Bit Server VM)
+2026-05-07 18:06:29,414 [     74]   INFO - #c.i.p.i.b.AppStarter - PID: 67086
+2026-05-07 18:06:29,525 [    185]   INFO - #c.i.p.i.b.AppStarter - JVM options: [-Daether.connector.resumeDownloads=false, -Dapple.awt.application.appearance=system, -Dcompose.swing.render.on.graphics=true, -Dide.native.launcher=false, -Didea.config.path=/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/config, -Didea.l10n.keys=only, -Didea.log.path=/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/log, -Didea.paths.selector=IntelliJIdea2025.3, -Didea.plugins.path=/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/plugins, -Didea.required.plugins.id=com.whyline.plugin, -Didea.reset.classpath.from.manifest=true, -Didea.system.path=/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/system, -Didea.vendor.name=JetBrains, -Dintellij.platform.runtime.repository.path=/Applications/IntelliJ IDEA.app/Contents/modules/module-descriptors.dat, -Dio.netty.allocator.type=pooled, -Djava.nio.file.spi.DefaultFileSystemProvider=com.intellij.platform.core.nio.fs.MultiRoutingFileSystemProvider, -Djava.system.class.loader=com.intellij.util.lang.PathClassLoader, -Djava.util.zip.use.nio.for.zip.file.access=true, -Djbr.catch.SIGABRT=true, -Djdk.attach.allowAttachSelf=true, -Djdk.http.auth.tunneling.disabledSchemes="", -Djdk.module.illegalAccess.silent=true, -Djdk.nio.maxCachedBufferSize=2097152, -Djna.boot.library.path=/Applications/IntelliJ IDEA.app/Contents/lib/jna/aarch64, -Djna.noclasspath=true, -Djna.nosys=true, -Dplugin.path=/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/plugins/python-ce:,/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/plugins/whyline-plugin, -Dpty4j.preferred.native.folder=/Applications/IntelliJ IDEA.app/Contents/lib/pty4j, -Dskiko.library.path=/Applications/IntelliJ IDEA.app/Contents/lib/skiko-awt-runtime-all, -Dsplash=true, -Dsun.io.useCanonCaches=false, -Dsun.java2d.metal=true, -XX:JbrShrinkingGcMaxHeapFreeRatio=40, -XX:ReservedCodeCacheSize=512m, -XX:+HeapDumpOnOutOfMemoryError, -XX:-OmitStackTraceInFastThrow, -XX:CICompilerCount=2, -XX:+IgnoreUnrecognizedVMOptions, -XX:+UnlockDiagnosticVMOptions, -XX:TieredOldPercentage=100000, -Xbootclasspath/a:/Applications/IntelliJ IDEA.app/Contents/lib/nio-fs.jar, --add-opens=java.base/java.io=ALL-UNNAMED, --add-opens=java.base/java.lang=ALL-UNNAMED, --add-opens=java.base/java.lang.ref=ALL-UNNAMED, --add-opens=java.base/java.lang.reflect=ALL-UNNAMED, --add-opens=java.base/java.net=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.base/java.nio.charset=ALL-UNNAMED, --add-opens=java.base/java.text=ALL-UNNAMED, --add-opens=java.base/java.time=ALL-UNNAMED, --add-opens=java.base/java.util=ALL-UNNAMED, --add-opens=java.base/java.util.concurrent=ALL-UNNAMED, --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED, --add-opens=java.base/java.util.concurrent.locks=ALL-UNNAMED, --add-opens=java.base/jdk.internal.ref=ALL-UNNAMED, --add-opens=java.base/jdk.internal.vm=ALL-UNNAMED, --add-opens=java.base/sun.net.dns=ALL-UNNAMED, --add-opens=java.base/sun.nio=ALL-UNNAMED, --add-opens=java.base/sun.nio.ch=ALL-UNNAMED, --add-opens=java.base/sun.nio.fs=ALL-UNNAMED, --add-opens=java.base/sun.security.ssl=ALL-UNNAMED, --add-opens=java.base/sun.security.util=ALL-UNNAMED, --add-opens=java.desktop/com.apple.eawt=ALL-UNNAMED, --add-opens=java.desktop/com.apple.eawt.event=ALL-UNNAMED, --add-opens=java.desktop/com.apple.laf=ALL-UNNAMED, --add-opens=java.desktop/com.sun.java.swing=ALL-UNNAMED, --add-opens=java.desktop/java.awt=ALL-UNNAMED, --add-opens=java.desktop/java.awt.dnd.peer=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/java.awt.font=ALL-UNNAMED, --add-opens=java.desktop/java.awt.image=ALL-UNNAMED, --add-opens=java.desktop/java.awt.peer=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.text=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.text.html=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.text.html.parser=ALL-UNNAMED, --add-opens=java.desktop/sun.awt=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.datatransfer=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.image=ALL-UNNAMED, --add-opens=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.java2d=ALL-UNNAMED, --add-opens=java.desktop/sun.lwawt=ALL-UNNAMED, --add-opens=java.desktop/sun.lwawt.macosx=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.management/sun.management=ALL-UNNAMED, --add-opens=jdk.attach/sun.tools.attach=ALL-UNNAMED, --add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED, --add-opens=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED, --add-opens=jdk.jdi/com.sun.tools.jdi=ALL-UNNAMED, -javaagent:/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/coroutines-javaagent.jar, -Xms128m, -Xmx2048m, -Dfile.encoding=UTF-8, -Duser.country=RU, -Duser.language=en, -Duser.variant, -ea]
+2026-05-07 18:06:29,526 [    186]   INFO - #c.i.p.i.b.AppStarter - args: traverseUI /Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/build/tmp/buildSearchableOptions true
+2026-05-07 18:06:29,527 [    187]   INFO - #c.i.p.i.b.AppStarter - library path: /Users/cryptogazer/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+2026-05-07 18:06:29,527 [    187]   INFO - #c.i.p.i.b.AppStarter - boot library path: /Applications/IntelliJ IDEA.app/Contents/jbr/Contents/Home/lib
+2026-05-07 18:06:29,547 [    207]   INFO - #c.i.p.i.b.AppStarter - locale=en_RU JNU=UTF-8 file.encoding=UTF-8
+    idea.home.path=/Applications/IntelliJ IDEA.app/Contents
+    idea.config.path=/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/config
+    idea.system.path=/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/system
+    idea.plugins.path=/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/plugins
+    idea.log.path=/Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/log
+2026-05-07 18:06:29,553 [    213]   INFO - #c.i.p.i.b.AppStarter - CPU cores: 10; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@77d3e501[Running, parallelism = 9, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: java.util.concurrent.ForkJoinPool$DefaultForkJoinWorkerThreadFactory@cb80886
+2026-05-07 18:06:29,570 [    230]   INFO - #c.i.i.p.PluginManager - Using broken plugins file from IDE distribution
+2026-05-07 18:06:29,571 [    231]   INFO - #c.i.i.p.PluginManager - PluginMainDescriptor(name=Python Community Edition, id=PythonCore, version=253.32098.101, isBundled=false, path=~/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/plugins/python-ce) overrides PluginMainDescriptor(name=Python Community Edition, id=PythonCore, version=253.32098.101, isBundled=false, path=~/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/plugins/python-ce)
+2026-05-07 18:06:29,571 [    231]   INFO - #c.i.i.p.PluginManager - PluginMainDescriptor(name=WhyLine, id=com.whyline.plugin, version=1.0.0, isBundled=false, path=~/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/plugins/whyline-plugin) overrides PluginMainDescriptor(name=WhyLine, id=com.whyline.plugin, version=1.0.0, isBundled=false, path=~/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/plugins/whyline-plugin)
+2026-05-07 18:06:29,604 [    264]   INFO - #c.i.i.p.PluginManager - Plugin set resolution:
+Module intellij.sh.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.fullLine.chat is not enabled because dependency intellij.ml.llm.core is not available
+Module intellij.fullLine.terraform is not enabled because dependency org.intellij.plugins.hcl is not available
+Module intellij.fullLine.rust is not enabled because dependency com.jetbrains.rust is not available
+Module intellij.fullLine.ruby is not enabled because dependency intellij.ruby.backend is not available
+Module intellij.fullLine.rider is not enabled because dependency com.intellij.modules.rider.cpp.core is not available
+Module intellij.fullLine.rider.shaderlab is not enabled because dependency intellij.fullLine.rider is not available
+Module intellij.fullLine.rider.fsharp is not enabled because dependency intellij.fullLine.rider is not available
+Module intellij.fullLine.rider.csharp is not enabled because dependency intellij.fullLine.rider is not available
+Module intellij.fullLine.rider.cpp is not enabled because dependency intellij.fullLine.rider is not available
+Module intellij.fullLine.rbs is not enabled because dependency intellij.ruby.rbs.backend is not available
+Module intellij.fullLine.php is not enabled because dependency com.jetbrains.php is not available
+Module intellij.fullLine.go is not enabled because dependency org.jetbrains.plugins.go is not available
+Module intellij.fullLine.erb is not enabled because dependency org.jetbrains.plugins.ruby is not available
+Module intellij.fullLine.cpp is not enabled because dependency intellij.cidr.lang.base is not available
+Module intellij.fullLine.federatedCompute is not enabled because dependency com.intellij.federatedCompute is not available
+Module intellij.fullLine.terraform.local is not enabled because dependency intellij.fullLine.terraform is not available
+Module intellij.fullLine.rust.local is not enabled because dependency intellij.fullLine.rust is not available
+Module intellij.fullLine.ruby.local is not enabled because dependency intellij.fullLine.ruby is not available
+Module intellij.fullLine.rider.local is not enabled because dependency intellij.fullLine.rider is not available
+Module intellij.fullLine.rider.csharp.local is not enabled because dependency intellij.fullLine.rider is not available
+Module intellij.fullLine.rider.cpp.local is not enabled because dependency intellij.fullLine.rider is not available
+Module intellij.fullLine.php.local is not enabled because dependency intellij.fullLine.php is not available
+Module intellij.fullLine.go.local is not enabled because dependency intellij.fullLine.go is not available
+Module intellij.fullLine.cpp.local is not enabled because dependency intellij.fullLine.cpp is not available
+Module intellij.editorconfig.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.ml.llm.completion is not enabled because dependency intellij.ml.llm.core is not available
+Module intellij.ml.llm.xml.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.vcs.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.rider.shaderlab.completion is not enabled because dependency intellij.fullLine.rider.shaderlab is not available
+Module intellij.ml.llm.rider.godot.completion is not enabled because dependency intellij.fullLine.rider.shaderlab is not available
+Module intellij.ml.llm.rider.fsharp.completion is not enabled because dependency intellij.fullLine.rider.fsharp is not available
+Module intellij.ml.llm.rider.csharp.completion is not enabled because dependency intellij.fullLine.rider.csharp is not available
+Module intellij.ml.llm.rider.cpp.completion is not enabled because dependency intellij.fullLine.rider.cpp is not available
+Module intellij.ml.llm.xdebugger.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.rust.completion is not enabled because dependency intellij.fullLine.rust is not available
+Module intellij.ml.llm.cpp.completion is not enabled because dependency intellij.fullLine.cpp is not available
+Module intellij.ml.llm.text.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.terraform.completion is not enabled because dependency intellij.fullLine.terraform is not available
+Module intellij.ml.llm.php.completion is not enabled because dependency intellij.fullLine.php is not available
+Module intellij.ml.llm.ruby.completion is not enabled because dependency intellij.fullLine.ruby is not available
+Module intellij.ml.llm.rbs.completion is not enabled because dependency intellij.fullLine.rbs is not available
+Module intellij.ml.llm.go.completion is not enabled because dependency intellij.fullLine.go is not available
+Module intellij.ml.llm.erb.completion is not enabled because dependency intellij.fullLine.ruby is not available
+Module intellij.ml.llm.chat.completion is not enabled because dependency intellij.fullLine.chat is not available
+Module intellij.ml.llm.completion.nextEdits.proxy is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.experiments is not enabled because dependency intellij.ml.llm.core is not available
+Module intellij.llmInstaller.ds.ide is not enabled because dependency intellij.dataspell.ide.impl is not available
+Module intellij.llmInstaller.ds is not enabled because dependency intellij.dataWrangler.llm is not available
+Module intellij.toml.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.protoeditor.go is not enabled because dependency org.jetbrains.plugins.go is not available
+Module intellij.textmate.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.ml.llm.html.completion is not enabled because dependency intellij.ml.llm.libraries.grazie is not available
+Module intellij.ml.llm.javaee.spring.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.python.completion is not enabled because dependency intellij.ml.llm.libraries.grazie is not available
+Module intellij.python.community.plugin.minorRider is not enabled because dependency com.intellij.modules.python-in-mini-ide-capable is not available
+Module intellij.python.community.plugin.minor is not enabled because dependency com.intellij.modules.python-in-mini-ide-capable is not available
+Module intellij.ml.llm.java.completion is not enabled because dependency intellij.ml.llm.libraries.grazie is not available
+Module intellij.yaml.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.ml.llm.json.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.yaml.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.yaml.javaee.spring.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.yaml.json.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.yaml.helm is not enabled because dependency org.jetbrains.plugins.go-template is not available
+Module intellij.json.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.code.provenance.core.llm is not enabled because dependency intellij.ml.llm.core is not available
+Module intellij.css.watcher is not enabled because dependency com.intellij.plugins.watcher is not available
+Module intellij.css.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.ml.llm.css.completion is not enabled because dependency intellij.ml.llm.css is not available
+Module intellij.ml.llm.css.less.completion is not enabled because dependency intellij.ml.llm.css is not available
+Module intellij.less/watcher is not enabled because dependency com.intellij.plugins.watcher is not available
+Module intellij.ml.llm.css.postcss.completion is not enabled because dependency intellij.ml.llm.css is not available
+Module intellij.sass.watcher is not enabled because dependency com.intellij.plugins.watcher is not available
+Module intellij.sass.frontend.split is not enabled because dependency intellij.css.frontend.split is not available
+Module intellij.ml.llm.css.sass.completion is not enabled because dependency intellij.ml.llm.css is not available
+Module intellij.webDeployment/phpStorm is not enabled because dependency com.intellij.modules.phpstorm is not available
+Module intellij.ml.llm.markdown.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.ml.llm.terminal.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.terminal.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.groovy/ant is not enabled because dependency AntSupport is not available
+Module intellij.ml.llm.properties.completion is not enabled because dependency intellij.ml.llm.completion is not available
+Module intellij.spring.boot.rewrite is not enabled because dependency com.intellij.openRewrite is not available
+Module intellij.spring.jsf is not enabled because dependency com.intellij.jsf is not available
+Module intellij.station.frontend.split is not enabled because dependency com.intellij.jetbrains.client is not available
+Module intellij.ml.llm.sql.completion is not enabled because dependency intellij.ml.llm.libraries.grazie is not available
+Module intellij.database.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.ml.llm.kotlin.completion is not enabled because dependency intellij.ml.llm.libraries.grazie is not available
+Module intellij.httpClient.injection.graphql is not enabled because dependency com.intellij.lang.jsgraphql is not available
+Module intellij.micronaut.rewrite is not enabled because dependency com.intellij.openRewrite is not available
+Module intellij.quarkus.rewrite is not enabled because dependency com.intellij.openRewrite is not available
+Module intellij.jupyter.split.frontend.py is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.jupyter.split.frontend is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.ml.llm.jupyter.kotlin.completion is not enabled because dependency intellij.ml.llm.libraries.grazie is not available
+Module intellij.kotlin.jupyter.k1 is not enabled because dependency kotlin.base.scripting.k1 is not available
+Module intellij.ml.llm.jupyter.python.completion is not enabled because dependency intellij.ml.llm.libraries.grazie is not available
+Module intellij.jupyter.py.wsl is not enabled because dependency intellij.python.wsl is not available
+Module intellij.jupyter.py.pro is not enabled because dependency intellij.python.scientific is not available
+Module intellij.clouds.docker.file.frontend.split is not enabled because dependency intellij.platform.frontend.split is not available
+Module intellij.clouds.kubernetes.charts.gotpl is not enabled because dependency intellij.yaml.helm is not available
+Module intellij.compose.ide.plugin.k1 is not enabled because dependency com.intellij.modules.kotlin.k1 is not available
+Module intellij.llmInstaller.pycharm.community is not enabled because dependency intellij.pycharm.community.ide.impl.promotion is not available
+Module kotlin-ultimate.native-debugger is not enabled because dependency intellij.cidr.runner is not available
+Module kotlin-ultimate.ultimate-native is not enabled because dependency kotlin-ultimate.native-debugger is not available
+Module intellij.ml.llm.javascript.completion is not enabled because dependency intellij.ml.llm.libraries.grazie is not available
+Module intellij.fullLine.js.svelte is not enabled because dependency dev.blachut.svelte.lang is not available
+Module intellij.ml.llm.javascript.svelte.completion is not enabled because dependency intellij.fullLine.js.svelte is not available
+Module intellij.fullLine.js.svelte.local is not enabled because dependency intellij.fullLine.js.svelte is not available
+Module intellij.fullLine.js.astro is not enabled because dependency org.jetbrains.plugins.astro is not available
+Module intellij.ml.llm.javascript.astro.completion is not enabled because dependency intellij.fullLine.js.astro is not available
+Module intellij.fullLine.js.astro.local is not enabled because dependency intellij.fullLine.js.astro is not available
+Module intellij.javascript.debugger.webstorm.specific is not enabled because dependency com.intellij.modules.webstorm is not available
+Module intellij.javascript.devkit is not enabled because dependency intellij.devkit.core is not available
+Module intellij.ml.llm.javascript.vue.completion is not enabled because dependency intellij.ml.llm.javascript.completion is not available
+Module intellij.qodana.cpp is not enabled because dependency intellij.clion.radler.core is not available
+Module intellij.qodana.python.coverage is not enabled because dependency intellij.python is not available
+Module intellij.qodana.php is not enabled because dependency com.jetbrains.php is not available
+Module intellij.qodana.go is not enabled because dependency intellij.go.coverage is not available
+Module intellij.station.aia is not enabled because dependency intellij.ml.llm.mcp is not available
+Module intellij.jupyter.split.backend.py is not enabled because dependency intellij.scientific.py.tables is not available
+Module intellij.packageChecker.php is not enabled because dependency com.jetbrains.php is not available
+Module intellij.packageChecker.go is not enabled because dependency org.jetbrains.plugins.go is not available
+Module intellij.packageChecker.amper is not enabled because dependency org.jetbrains.amper is not available
+2026-05-07 18:06:29,619 [    279]   INFO - #c.i.i.p.PluginManager - Loaded bundled plugins: IDEA CORE (253.32098.37), Notebook Files (253.32098.37), Collections Viewer in Debugger (253.32098.37), YAML (253.32098.37), Database Tools and SQL (253.32098.37), JavaScript and TypeScript (253.32098.37), DevKit Runtime (253.32098.37), Gradle Declarative Support (253.32098.37), Java (253.32098.37), Shell Script (253.32098.37), Qodana (253.32098.37), Full Line Code Completion (253.32098.37), Mercurial (253.32098.37), Japanese Language Pack / 日本語言語パック (253.32098.37), EditorConfig (253.32098.37), Chinese (Simplified) Language Pack / 中文语言包 (253.32098.37), IDE Features Trainer (253.32098.37), CSS (253.32098.37), JavaScript Debugger (253.32098.37), Toml (253.32098.37), WebP Support (253.32098.37), Performance Testing (253.32098.37), Protocol Buffers (253.32098.37), Korean Language Pack / 한국어 언어 팩 (253.32098.37), Subversion (253.32098.37), Artifacts Repository Search (253.32098.37), TextMate Bundles (253.32098.37), HTML Tools (253.32098.37), Images (253.32098.37), Copyright (253.32098.37), Java Stream Debugger (253.32098.37), JavaFX (253.32098.37), Bytecode Viewer (253.32098.37), Java IDE Customization (253.32098.37), Kubernetes (253.32098.37), JSON (253.32098.37), Machine Learning in Search Everywhere (253.32098.37), Machine Learning in Find Usages (253.32098.37), JSONPath (253.32098.37), Configuration Script (253.32098.37), Code Provenance by Qodana (253.32098.37), JetBrains Ultimate (253.32098.37), AOP Pointcut Language (253.32098.37), Less (253.32098.37), PostCSS (253.32098.37), Sass (253.32098.37), Diagrams (253.32098.37), FTP/SFTP/WebDAV Connectivity (253.32098.37), Cron Expressions (253.32098.37), Jakarta EE Platform (253.32098.37), Refactor-X (253.32098.37), Modal Commit Interface (253.32098.37), Spring (253.32098.37), Markdown (253.32098.37), Lombok (253.32098.37), Java Bytecode Decompiler (253.32098.37), Eclipse Interoperability (253.32098.37), TestNG (253.32098.37), Terminal (253.32098.37), In-Editor Performance Hints (253.32098.37), Properties (253.32098.37), FreeMarker (253.32098.37), Apache Velocity (253.32098.37), Spring Initializr (253.32098.37), JVM Microservices Frameworks (253.32098.37), Jakarta EE: JPA Model (253.32098.37), JUnit (253.32098.37), Code Coverage for Java (253.32098.37), Groovy (253.32098.37), Java Internationalization (253.32098.37), Jakarta EE: Contexts and Dependency Injection (CDI) (253.32098.37), Thymeleaf (253.32098.37), Jakarta EE: Messaging (JMS) (253.32098.37), Jakarta EE: Expression Language (EL) (253.32098.37), Spring Security (253.32098.37), Spring Modulith (253.32098.37), Spring Boot (253.32098.37), Spring Messaging (253.32098.37), Gradle (253.32098.37), Gradle DSL API (253.32098.37), Liquibase (253.32098.37), NetBeans Keymap (253.32098.37), Jakarta EE: Web/Servlets (253.32098.37), Remote Execution Agent (253.32098.37), Station (253.32098.37), Data Editor Support (253.32098.37), Flyway (253.32098.37), Jakarta EE: Server Pages (JSP) (253.32098.37), Kotlin (253.32098.37-IJ), Ktor (253.32098.37), Visual Studio Keymap (253.32098.37), Machine Learning Code Completion (253.32098.37), Spring Cloud (253.32098.37), Spring Integration Patterns (253.32098.37), OpenAPI Specifications (253.32098.37), Jakarta EE: RESTful Web Services (JAX-RS) (253.32098.37), HTTP Client (253.32098.37), Shared Indexes (253.32098.37), Shared Project Indexes (253.32098.37), Remote Development Server (253.32098.37), WildFly (253.32098.37), Tomcat and TomEE (253.32098.37), Jakarta EE: Application Servers (253.32098.37), XPathView + XSLT (253.32098.37), Task Management (253.32098.37), Time Tracking (253.32098.37), Jakarta EE: Persistence (JPA) (253.32098.37), Jakarta EE: Data (253.32098.37), Spring Data (253.32098.37), Reverse Engineering (253.32098.37), Micronaut (253.32098.37), Hibernate (253.32098.37), Quarkus (253.32098.37), JVM Persistence Frameworks (253.32098.37), Jupyter (253.32098.37), Kotlin Notebook (253.32098.37), Docker (253.32098.37), Natural Languages (253.32098.37), Compose Multiplatform (253.32098.37), Eclipse Keymap (253.32098.37), Git (253.32098.37), GitLab (253.32098.37), Backup and Sync (253.32098.37), GitHub (253.32098.37), SSH Remote Run (253.32098.37), Maven (253.32098.37), Gradle for Java (253.32098.37), Webpack (253.32098.37), Tailwind CSS (253.32098.37), React (253.32098.37), Stylelint (253.32098.37), Vite (253.32098.37), Node.js (253.32098.37), Vue.js (253.32098.37), TSLint (253.32098.37), Node.js Remote Interpreter (253.32098.37), Styled Components & Styled JSX (253.32098.37), Polymer & Web Components (253.32098.37), Prettier (253.32098.37), Next.js (253.32098.37), Karma (253.32098.37), JavaScript Intention Power Pack (253.32098.37), MCP Server (253.32098.37), Perforce Helix Core (253.32098.37), Code With Me (253.32098.37), Package Checker (253.32098.37), Jakarta EE: Bean Validation (253.32098.37), Dev Containers (253.32098.37), Spring Web (253.32098.37), Endpoints (253.32098.37), Remote Development Gateway (253.32098.37), Async Profiler for IDE Performance Testing (253.32098.37), Angular (253.32098.37)
+2026-05-07 18:06:29,620 [    280]   INFO - #c.i.i.p.PluginManager - Loaded custom plugins: Python Community Edition (253.32098.101), WhyLine (1.0.0)
+2026-05-07 18:06:29,667 [    327]   INFO - #c.i.o.u.LowMemoryWatcherManager - Use ExponentiallySmoothingTracker(90000 ms)
+2026-05-07 18:06:29,672 [    332]   INFO - #c.i.o.u.LowMemoryWatcherManager - Subscribing to MemoryPool[G1 Old Gen]{max: 2147483648, threshold: 2040109440 (0.95 * max)}
+2026-05-07 18:06:29,674 [    334]   INFO - #c.i.o.u.LowMemoryWatcherManager - Schedule GC-time updating: each 15000ms
+2026-05-07 18:06:29,705 [    365]   INFO - #c.i.u.i.PageCacheUtils - File page caching params:
+	DEFAULT_PAGE_SIZE: 10485760
+	Direct memory to use, max: 2126512128
+	FilePageCache: regular
+	Regular FilePageCache: 629145600 bytes
+	DirectByteBuffers pool: 104857600 bytes
+2026-05-07 18:06:29,718 [    378]   INFO - #c.i.p.e.i.f.EelMultiRoutingFileSystemBackendInitializationService - Eel MultiRoutingFileSystem backend is initialized
+2026-05-07 18:06:29,735 [    395]   INFO - #c.i.o.v.n.i.VfsData - Use SoftReference in VFS cache: true
+2026-05-07 18:06:29,752 [    412]   INFO - #c.i.c.d.g.i.DevcontainerPluginManager - Started
+2026-05-07 18:06:29,752 [    412]   INFO - #c.i.p.k.b.BackendKernelServiceKt - Backend started Kernel
+2026-05-07 18:06:29,753 [    413]   INFO - #c.i.c.d.g.i.DevcontainerPluginManager - Options path: /Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/config/options
+2026-05-07 18:06:29,754 [    414]   INFO - #c.i.s.c.t.ToolboxDaemonLauncher - Toolbox daemon launch disabled due to headless mode
+2026-05-07 18:06:29,762 [    422]   INFO - #c.i.o.v.n.p.PersistentFSLoader - VFS uses names enumerator over mmapped file
+2026-05-07 18:06:29,764 [    424]   INFO - #c.i.o.v.n.p.PersistentFSLoader - VFS uses streamlined attributes storage (over mmapped file)
+2026-05-07 18:06:29,764 [    424]   INFO - #c.i.o.v.n.p.PersistentFSLoader - VFS uses OverMMappedFile(pageSize=67108864, acquireStorageOwnership=true) storage for main file records table
+2026-05-07 18:06:29,764 [    424]   INFO - #c.i.o.v.n.p.PersistentFSLoader - VFS uses content storage over memory-mapped file, with compression algo: LZ4[ > 8000b ]
+2026-05-07 18:06:29,811 [    471]   INFO - #c.i.l.LocalizationStateServiceImpl - [i18n] Localization property from registry is null
+2026-05-07 18:06:29,826 [    486]   INFO - #c.i.o.v.n.p.FSRecords - VFS health-check enabled: first after 600000 ms, and each following 43200000 ms, wrap in RA: true
+2026-05-07 18:06:29,848 [    508]   INFO - #c.i.i.s.e.StatisticsEventLoggerProvider - Initialize event logger provider for 'MLSE'
+2026-05-07 18:06:29,851 [    511]   INFO - #c.i.s.c.m.SettingsRepositoryToSettingsSyncMigration - No data from settingsRepository in 'settingsRepository' folder => no migration needed
+2026-05-07 18:06:29,851 [    511]   INFO - #c.i.i.s.e.StatisticsEventLoggerProvider - Initialize event logger provider for 'FUS'
+2026-05-07 18:06:29,852 [    512]   INFO - #c.i.i.s.e.StatisticsEventLoggerProvider - Initialize event logger provider for 'MP'
+2026-05-07 18:06:29,852 [    512]   INFO - #c.i.i.s.e.StatisticsEventLoggerProvider - Initialize event logger provider for 'TRACE'
+2026-05-07 18:06:29,852 [    512]   INFO - #c.i.i.s.e.StatisticsEventLoggerProvider - Initialize event logger provider for 'ML'
+2026-05-07 18:06:29,870 [    530]   INFO - #c.i.i.s.StatisticsRegionSettingsServiceImpl - Statistics. Region code is not_set
+2026-05-07 18:06:29,877 [    537]   INFO - #c.i.a.o.PathMacrosImpl - Loaded path macros: {MAVEN_REPOSITORY=/Users/cryptogazer/.m2/repository}
+2026-05-07 18:06:29,889 [    549]   INFO - #c.i.i.p.ExpiredPluginsState - Plugins to skip: []
+2026-05-07 18:06:29,918 [    578]   INFO - #c.i.p.trialPromotion - IDE is not managed
+2026-05-07 18:06:30,046 [    706]   INFO - #o.j.i.BuiltInServerManager - built-in server started, port 63342
+2026-05-07 18:06:30,073 [    733]   INFO - c.i.p.i.IdeFingerprint - Calculated dependencies fingerprint in 388 ms (hash=2xvirb5j766l4, buildTime=1773723660, appVersion=IU-253.32098.37)
+2026-05-07 18:06:30,144 [    804]   INFO - #c.i.u.n.s.CertificateManager - Default SSL context initialized
+2026-05-07 18:06:30,161 [    821]   INFO - #c.i.u.i.c.d.IndexWriter - Use com.intellij.util.indexing.contentQueue.dev.MultiThreadedWithSuspendIndexWriter@71909e27 as (parallel) index writer implementation
+2026-05-07 18:06:30,164 [    824]   INFO - #c.i.u.i.i.SlruIndexStorageCacheProvider - SLRU cache will be used for indexes
+2026-05-07 18:06:30,164 [    824]   INFO - #c.i.u.i.i.MapIndexStorageCacheProvider$Companion - Default index storage cache provider [com.intellij.util.indexing.impl.SlruIndexStorageCacheProvider@4ef7c048] is used
+2026-05-07 18:06:30,526 [   1186]   INFO - #c.i.o.v.n.p.PersistentFSLoader - VFS: impl (expected) version=846400, 0 file records, 0 content blobs
+2026-05-07 18:06:30,529 [   1189]   INFO - #c.i.o.v.n.p.FSRecordsImpl - VFS initialized: 768 ms, 0 failed attempts, 0 error(s) were recovered
+2026-05-07 18:06:30,529 [   1189]   INFO - #c.i.o.v.n.p.FSRecordsImpl - VFS scanned: file-by-name index was populated
+2026-05-07 18:06:30,533 [   1193]   INFO - #c.i.o.v.n.p.PersistentFSImpl - VFS.MAX_FILE_LENGTH_TO_CACHE: 1048576
+2026-05-07 18:06:30,534 [   1194]   INFO - #c.i.u.i.FileBasedIndexImpl - Loading indexes
+2026-05-07 18:06:30,536 [   1196]   INFO - #c.i.o.v.i.l.NativeFileWatcherImpl - Native file watcher is disabled
+2026-05-07 18:06:30,575 [   1235]   INFO - #c.i.i.s.p.i.SharedIndexMainZipStorage - Shared Indexes Storage is opened and empty
+2026-05-07 18:06:30,578 [   1238]   INFO - #c.i.u.s.JBUIScale - Computed user scale factor: 1.0 (JRE-managed HiDPI)
+2026-05-07 18:06:30,667 [   1327]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'FilenameIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,668 [   1328]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'TodoIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,668 [   1328]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'filetypes' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,669 [   1329]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'Stubs' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,670 [   1330]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'IdIndex' index (applicable providers: [default, fake-storage]), shards = 1
+2026-05-07 18:06:30,672 [   1332]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'HashFragmentIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,672 [   1332]   INFO - #c.i.f.n.TrigramIndexFilter - Filter exclude extensions is enabled: CustomizableExcludeExtensions([com.intellij.java.JavaLibrarySourcesExcludingIndexFilterExtension@11c27faa])
+2026-05-07 18:06:30,672 [   1332]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'Trigram.Index' index (applicable providers: [default, fake-storage]), shards = 1
+2026-05-07 18:06:30,674 [   1334]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'sql.types.count.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,676 [   1336]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'fileIncludes' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,676 [   1336]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'sql.routine.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,694 [   1354]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'FrameworkDetectionIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,726 [   1386]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'XmlNamespaces' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,726 [   1386]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'SchemaTypeInheritance' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,727 [   1387]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'XmlTagNames' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,733 [   1393]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'html5.custom.attributes.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,740 [   1400]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'RelaxSymbolIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,756 [   1416]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'editorconfig.index.name' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,758 [   1418]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'java.auto.module.name' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,759 [   1419]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'DomFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,759 [   1419]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'HtmlTagIdIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,763 [   1423]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'java.source.module.name' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,764 [   1424]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'java.null.method.argument' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,767 [   1427]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'java.fun.expression' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,767 [   1427]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'java.binary.plus.expression' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,772 [   1432]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'bytecodeAnalysis' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,775 [   1435]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'Py.module.name' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,778 [   1438]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'Py.setuptools.namespace' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,781 [   1441]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'JavaFxControllerClassIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,784 [   1444]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'javafx.id.name' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,789 [   1449]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'javafx.custom.component' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,799 [   1459]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'protoeditor.java.outer.class.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,800 [   1460]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'json.file.root.values' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,803 [   1463]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'CssIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,804 [   1464]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'CompassFunctionsIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,806 [   1466]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'javafx.stylesheets.name' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,808 [   1468]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'css.template.selectors' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,808 [   1468]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'FtlFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,810 [   1470]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'LombokConfigIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,811 [   1471]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'xmlProperties' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,817 [   1477]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'VtlFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,832 [   1492]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'com.intellij.jpa.jpb.model.EntityRegisterFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,832 [   1492]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'PropertyCodeReferenceIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,862 [   1522]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'spring.spiFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,866 [   1526]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'spring.boot.importsFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,869 [   1529]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'spring.autoConfigureMetadataIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,869 [   1529]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'SpringBootPropertiesImports' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,872 [   1532]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,872 [   1532]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'SpringBootYamlImports' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,874 [   1534]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'taglibUris' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,874 [   1534]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'SpringXmlBeansIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,877 [   1537]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,879 [   1539]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,889 [   1549]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,891 [   1551]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,897 [   1557]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,900 [   1560]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,904 [   1564]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,908 [   1568]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'KotlinPackageSourcesMemberNamesIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,915 [   1575]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,919 [   1579]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,924 [   1584]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,925 [   1585]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,926 [   1586]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'KotlinTopLevelCallableByPackageShortNameIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,931 [   1591]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,936 [   1596]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'KotlinBinaryRootToPackageIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,942 [   1602]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'http.request.execution.environment' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,949 [   1609]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'http.request.completion.host' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,951 [   1611]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'http.request.headers.values.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,957 [   1617]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'OpenapiSpecificationContentIndexer' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,958 [   1618]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'http.request.name.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,963 [   1623]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'SwReferencesIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,966 [   1626]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'XsltSymbolIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,967 [   1627]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'js.test.names' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,973 [   1633]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'js.package.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,975 [   1635]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'js.custom.single.entry.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,982 [   1642]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'js.implicit.elements.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,986 [   1646]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'HtmlScriptSrcIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,986 [   1646]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'js.string.literal.words.index' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,990 [   1650]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'TypeScriptExternalPathCandidates' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:30,998 [   1658]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'js.test.names.extensible' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:31,003 [   1663]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'VueNoScriptFilesIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:31,003 [   1663]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'VueComponentStylesIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:31,003 [   1663]   INFO - #c.i.u.i.i.s.IndexStorageLayoutLocator - Layout 'default' will be used to for 'WebComponentsIndex' index (applicable providers: [default, fake-storage])
+2026-05-07 18:06:31,026 [   1686]   INFO - #c.i.u.i.FileBasedIndexImpl - Indices to be built:js.implicit.elements.index(v = 1180389),HashFragmentIndex(v = 19111503),com.intellij.jpa.jpb.model.EntityRegisterFileIndex(v = 0),KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex(v = 3),KotlinPackageSourcesMemberNamesIndex(v = 2),java.null.method.argument(v = 1),Py.module.name(v = 0),FrameworkDetectionIndex(v = 65536),XmlNamespaces(v = 8),java.fun.expression(v = 6),SpringXmlBeansIndex(v = 661),spring.autoConfigureMetadataIndex(v = 2),org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex(v = 3),org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex(v = 5),VueComponentStylesIndex(v = 2),VtlFileIndex(v = 1),js.test.names(v = 25),HtmlScriptSrcIndex(v = 1),WebComponentsIndex(v = 5),editorconfig.index.name(v = 5),FilenameIndex(v = 258),spring.boot.importsFileIndex(v = 1),js.test.names.extensible(v = 291975),filetypes(v = 4096),org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex(v = 5),KotlinBinaryRootToPackageIndex(v = 7),js.string.literal.words.index(v = 4),xmlProperties(v = 2),org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex(v = 4),javafx.custom.component(v = 2),org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex(v = 2),java.binary.plus.expression(v = 4),RelaxSymbolIndex(v = 0),protoeditor.java.outer.class.index(v = 0),json.file.root.values(v = 5),sql.types.count.index(v = 0),org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex(v = 3),SchemaTypeInheritance(v = 2),XmlTagNames(v = 1),XsltSymbolIndex(v = 0),SpringBootPropertiesImports(v = 0),Trigram.Index(v = 4),org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex(v = 2),SwReferencesIndex(v = 1),FtlFileIndex(v = 5),org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex(v = 1),fileIncludes(v = 6),TodoIndex(v = 13),js.custom.single.entry.index(v = 1180379),javafx.id.name(v = 3),org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex(v = 4),PropertyCodeReferenceIndex(v = 0),css.template.selectors(v = 38),taglibUris(v = 7),spring.spiFileIndex(v = 3),org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex(v = 4),js.package.index(v = 12),bytecodeAnalysis(v = 11),JavaFxControllerClassIndex(v = 1),http.request.completion.host(v = 5),javafx.stylesheets.name(v = 6),SpringBootYamlImports(v = 0),OpenapiSpecificationContentIndexer(v = 13),CompassFunctionsIndex(v = 41),org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex(v = 5),TypeScriptExternalPathCandidates(v = 0),Stubs(v = 46),java.auto.module.name(v = 6),http.request.headers.values.index(v = 4),http.request.execution.environment(v = 3),http.request.name.index(v = 2),java.source.module.name(v = 4),Py.setuptools.namespace(v = 0),LombokConfigIndex(v = 15),html5.custom.attributes.index(v = 1),IdIndex(v = 22),sql.routine.index(v = 1),CssIndex(v = 43),HtmlTagIdIndex(v = 3),DomFileIndex(v = 0),KotlinTopLevelCallableByPackageShortNameIndex(v = 3),VueNoScriptFilesIndex(v = 12),org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex(v = 2)
+2026-05-07 18:06:31,026 [   1686]   INFO - #c.i.u.i.FileBasedIndexImpl - Using simple flusher for indexes
+2026-05-07 18:06:31,029 [   1689]   INFO - #c.i.u.i.IndexDataInitializer - Index data initialization done: 491 ms. Initialized indexes: [FilenameIndex, sql.routine.index, Trigram.Index, sql.types.count.index, TodoIndex, filetypes, fileIncludes, IdIndex, HashFragmentIndex, FrameworkDetectionIndex, XmlTagNames, XmlNamespaces, SchemaTypeInheritance, html5.custom.attributes.index, java.auto.module.name, RelaxSymbolIndex, Stubs, Py.module.name, editorconfig.index.name, HtmlTagIdIndex, DomFileIndex, java.source.module.name, bytecodeAnalysis, Py.setuptools.namespace, java.fun.expression, java.null.method.argument, JavaFxControllerClassIndex, java.binary.plus.expression, javafx.id.name, javafx.custom.component, protoeditor.java.outer.class.index, json.file.root.values, CssIndex, PropertyCodeReferenceIndex, com.intellij.jpa.jpb.model.EntityRegisterFileIndex, FtlFileIndex, xmlProperties, VtlFileIndex, css.template.selectors, LombokConfigIndex, CompassFunctionsIndex, javafx.stylesheets.name, spring.spiFileIndex, spring.boot.importsFileIndex, SpringBootPropertiesImports, SpringBootYamlImports, spring.autoConfigureMetadataIndex, taglibUris, org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex, org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex, SpringXmlBeansIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex, KotlinPackageSourcesMemberNamesIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex, org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex, org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex, KotlinTopLevelCallableByPackageShortNameIndex, KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex, KotlinBinaryRootToPackageIndex, http.request.execution.environment, http.request.headers.values.index, http.request.completion.host, OpenapiSpecificationContentIndexer, XsltSymbolIndex, js.test.names, SwReferencesIndex, js.package.index, http.request.name.index, js.custom.single.entry.index, js.implicit.elements.index, js.string.literal.words.index, HtmlScriptSrcIndex, TypeScriptExternalPathCandidates, VueNoScriptFilesIndex, js.test.names.extensible, WebComponentsIndex, VueComponentStylesIndex].
+2026-05-07 18:06:31,788 [   2448]   INFO - #c.i.p.s.StubIndexImpl - Following stub indices will be built:js.symbol.index2(v = 6),java.module.name(v = 4),Css.custom.property(v = 2),dom.namespaceKey(v = 1),markdown.header.anchor(v = 2),sql.names(v = 21),gr.field.name(v = 5),Py.class.attributes(v = 2),es6.assignment.index(v = 2),Py.class.super(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex(v = 3),java.class.shortname(v = 4),js.class.index2(v = 3),gr.annot.members(v = 5),ts.external.module.name.index(v = 3),KotlinFileFacadeClassByPackageIndex(v = 2),ts.embedded.content.index(v = 2),Py.module.attribute(v = 2),angular2.js.css.custom-property.index(v = 9),vue.composition.app.index(v = 25),angular2.metadata.className.index(v = 9),org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasShortNameIndex(v = 2),vue.url.index(v = 25),org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex(v = 3),org.jetbrains.kotlin.idea.stubindex.KotlinSubclassObjectNameIndex(v = 3),angular2.templateUrl.index(v = 9),java.annotations(v = 2),Py.function.shortName(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex(v = 2),gr.class.super(v = 5),Css.custom.variable(v = 3),KotlinProbablyInjectedFunctionShortNameIndex(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex(v = 3),js.typedef.index2(v = 2),Css.ampersand.selector(v = 2),java.class.fqn(v = 1),markdown.header(v = 2),JS.base.types.index(v = 3),js.namespace.index(v = 2),KotlinOverridableInternalMembersShortNameIndex(v = 2),angular2.source.module.index(v = 9),org.jetbrains.kotlin.idea.stubindex.KotlinExactPackagesIndex(v = 2),KotlinTypeAliasByExpansionShortNameIndex(v = 2),js.nonglobal.symbol.index(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinSuperClassIndex(v = 2),ts.global.exported.index(v = 2),ts.external.module.index(v = 3),Scss.mixin(v = 3),gr.class.fqn.s(v = 5),java.method.name(v = 2),js.export.default.react.component.index(v = 2),postcss.custom.media(v = 2),dom.elementClass(v = 0),angular2.ivy.directive.index(v = 9),angular2.js.html.custom-property.index(v = 9),Scss.placeholder.selector(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyFqnNameIndex(v = 3),KotlinTopLevelPropertyByPackageIndex(v = 2),Less.variables(v = 2),js.global.symbol.index(v = 2),KotlinProbablyNothingPropertyShortNameIndex(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinFunctionShortNameIndex(v = 3),org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelClassByPackageIndex(v = 2),java.record.component.name(v = 2),java.method.parameter.types(v = 3),Scss.function(v = 3),KotlinTopLevelTypeAliasByPackageIndex(v = 2),js.symbol.qualified.names.index(v = 1),js.qualified.shortName(v = 4),JS.subclass.stub.index(v = 2),KotlinExtensionsInObjectsByReceiverTypeIndex(v = 2),js.gcl.modules(v = 2),Py.variable.shortName(v = 3),angular2.metadata.directive.index(v = 9),angular2.metadata.pipe.index(v = 9),angular2.source.directive.index(v = 9),KotlinTopLevelExpectFunctionFqNameIndex(v = 2),es6.side.effect.import.index(v = 3),gr.method.name(v = 5),vue.global.directives.index(v = 25),gr.script.fqn.s(v = 5),JS.class.super(v = 5),es6.exported.index(v = 3),js.lazy.packages(v = 3),ts.local.classes(v = 2),protobuf.byShortName(v = 3),amd.requirePaths.index(v = 2),vue.global.filters.index(v = 25),org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex(v = 3),sql.column.name(v = 3),angular2.metadata.function.index(v = 9),js.imported.bindings.index(v = 2),gr.annot.method.name(v = 5),java.class.extlist(v = 3),Py.class.shortName(v = 2),Scss.variable(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinJvmNameAnnotationIndex(v = 2),JS.framework.markers.index(v = 2),Py.TypeAliasName(v = 2),kotlin.primeIndexKey(v = 2),angular2.metadata.node.index(v = 9),JS.global.qualified.elements(v = 3),jvm.static.member.type(v = 2),vue.extends.binding.index(v = 25),gr.script.class(v = 5),sql.table.shortName(v = 3),vue.id.index(v = 25),Css.custom.mixin(v = 2),KotlinTopLevelExtensionsByReceiverTypeIndex(v = 4),KotlinTopLevelFunctionByPackageIndex(v = 2),properties.index(v = 2),postcss.custom.selector(v = 2),vuex.store.index(v = 25),org.jetbrains.kotlin.idea.stubindex.KotlinPropertyShortNameIndex(v = 2),vue.components.index(v = 25),gr.anonymous.class(v = 6),KotlinTopLevelExpectPropertyFqNameIndex(v = 2),vue.options.index(v = 25),angular2.symbol.index(v = 9),Css.id(v = 2),Css.class(v = 3),redis.dml.shortName(v = 3),js.used.remote.modules(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasFqNameIndex(v = 2),amd.baseUrl.index(v = 2),KotlinProbablyNothingFunctionShortNameIndex(v = 2),Less.mixins(v = 2),angular2.metadata.module.index(v = 9),Py.class.shortNameInsensitive(v = 2),java.field.name(v = 2),java.unnamed.class(v = 2),Css.attr(v = 2),JS.class.implements(v = 3),js.doc.modules(v = 2),js.amd.modules(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionFqnNameIndex(v = 3),Python.Decorator(v = 2),protobuf.byQualifiedName(v = 3),vue.mixin.binding.index(v = 25),js.exported.index(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex(v = 2),java.anonymous.baseref(v = 2),js.local.namespace.members.index(v = 2),angular2.ivy.pipe.index(v = 9),org.jetbrains.kotlin.idea.stubindex.KotlinMultifileClassPartIndex(v = 2),org.jetbrains.kotlin.idea.stubindex.KotlinScriptFqnIndex(v = 2),js.generics.index(v = 2),angular2.ivy.module.index(v = 9),angular2.source.pipe.index(v = 9),org.jetbrains.kotlin.idea.stubindex.KotlinInnerTypeAliasClassIdIndex(v = 2),KotlinProbablyContractedFunctionShortNameIndex(v = 2),js.element.qualifiedName(v = 3),jvm.static.member.name(v = 2)
+2026-05-07 18:06:31,788 [   2448]   INFO - #c.i.u.i.IndexDataInitializer - Index data initialization done: 759 ms. Initialized stub indexes: {org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelClassByPackageIndex, angular2.ivy.directive.index, java.anonymous.baseref, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionFqnNameIndex, vue.composition.app.index, org.jetbrains.kotlin.idea.stubindex.KotlinInnerTypeAliasClassIdIndex, es6.exported.index, sql.names, Css.id, org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex, Less.mixins, java.annotations, es6.assignment.index, org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasShortNameIndex, ts.external.module.name.index, Py.TypeAliasName, org.jetbrains.kotlin.idea.stubindex.KotlinSuperClassIndex, Py.class.attributes, js.qualified.shortName, js.nonglobal.symbol.index, angular2.js.css.custom-property.index, Scss.placeholder.selector, Py.variable.shortName, JS.class.implements, KotlinTopLevelExtensionsByReceiverTypeIndex, redis.dml.shortName, KotlinProbablyNothingPropertyShortNameIndex, Css.custom.property, ts.local.classes, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyFqnNameIndex, Python.Decorator, dom.namespaceKey, angular2.symbol.index, Css.ampersand.selector, properties.index, js.symbol.index2, JS.base.types.index, Py.class.shortNameInsensitive, org.jetbrains.kotlin.idea.stubindex.KotlinJvmNameAnnotationIndex, vue.global.directives.index, js.local.namespace.members.index, java.method.parameter.types, Py.class.shortName, angular2.js.html.custom-property.index, gr.field.name, org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex, KotlinFileFacadeClassByPackageIndex, ts.embedded.content.index, js.imported.bindings.index, angular2.source.pipe.index, org.jetbrains.kotlin.idea.stubindex.KotlinFunctionShortNameIndex, angular2.ivy.module.index, vue.extends.binding.index, java.record.component.name, org.jetbrains.kotlin.idea.stubindex.KotlinSubclassObjectNameIndex, org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex, js.namespace.index, org.jetbrains.kotlin.idea.stubindex.KotlinExactPackagesIndex, gr.method.name, vue.options.index, KotlinTopLevelFunctionByPackageIndex, java.class.shortname, angular2.source.module.index, gr.annot.method.name, Py.class.super, JS.framework.markers.index, KotlinOverridableInternalMembersShortNameIndex, js.used.remote.modules, amd.baseUrl.index, org.jetbrains.kotlin.idea.stubindex.KotlinPropertyShortNameIndex, markdown.header.anchor, Less.variables, Css.custom.mixin, js.export.default.react.component.index, js.generics.index, Css.class, vuex.store.index, kotlin.primeIndexKey, vue.components.index, JS.class.super, Css.custom.variable, js.amd.modules, es6.side.effect.import.index, Py.function.shortName, java.module.name, org.jetbrains.kotlin.idea.stubindex.KotlinScriptFqnIndex, angular2.metadata.module.index, KotlinTopLevelExpectFunctionFqNameIndex, jvm.static.member.name, gr.annot.members, KotlinProbablyNothingFunctionShortNameIndex, protobuf.byQualifiedName, KotlinTypeAliasByExpansionShortNameIndex, vue.global.filters.index, JS.subclass.stub.index, angular2.ivy.pipe.index, Css.attr, JS.global.qualified.elements, vue.id.index, js.doc.modules, gr.script.class, js.exported.index, js.symbol.qualified.names.index, KotlinTopLevelPropertyByPackageIndex, postcss.custom.media, org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex, org.jetbrains.kotlin.idea.stubindex.KotlinMultifileClassPartIndex, js.lazy.packages, java.class.extlist, angular2.metadata.function.index, java.class.fqn, ts.external.module.index, jvm.static.member.type, KotlinExtensionsInObjectsByReceiverTypeIndex, js.typedef.index2, js.element.qualifiedName, angular2.templateUrl.index, Scss.variable, amd.requirePaths.index, java.method.name, java.field.name, KotlinTopLevelExpectPropertyFqNameIndex, markdown.header, Py.module.attribute, dom.elementClass, gr.script.fqn.s, angular2.source.directive.index, angular2.metadata.directive.index, angular2.metadata.className.index, sql.column.name, js.global.symbol.index, js.gcl.modules, js.class.index2, java.unnamed.class, gr.class.fqn.s, KotlinProbablyContractedFunctionShortNameIndex, gr.class.super, sql.table.shortName, org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex, angular2.metadata.pipe.index, org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex, gr.anonymous.class, ts.global.exported.index, Scss.mixin, vue.mixin.binding.index, Scss.function, postcss.custom.selector, org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasFqNameIndex, protobuf.byShortName, KotlinProbablyInjectedFunctionShortNameIndex, KotlinTopLevelTypeAliasByPackageIndex, vue.url.index, angular2.metadata.node.index}.
+2026-05-07 18:06:31,792 [   2452]   INFO - #c.i.u.s.JBUIScale - System scale factor: 1.0 (JRE-managed HiDPI)
+2026-05-07 18:06:32,206 [   2866]   WARN - #c.i.o.e.c.i.EditorColorsManagerImpl - resource not found: colorSchemes/SqlDefault.xml
+2026-05-07 18:06:32,207 [   2867]   WARN - #c.i.o.e.c.i.EditorColorsManagerImpl - resource not found: colorSchemes/sassDefault.xml
+2026-05-07 18:06:32,212 [   2872]   WARN - #c.i.o.e.c.i.EditorColorsManagerImpl - resource not found: colorSchemes/SqlDarcula.xml
+2026-05-07 18:06:32,654 [   3314]   INFO - #c.i.i.p.n.PluginsGroupComponentWithProgress - Marketplace tab: loading stopped
+2026-05-07 18:06:32,845 [   3505]   INFO - #c.i.o.u.i.ExternalUpdateManager - update manager: -
+2026-05-07 18:06:32,990 [   3650]   INFO - #c.i.i.p.m.MarketplaceRequests - Looking for the last compatible plugin updates for:
+[com.intellij.microservices.ui, org.jetbrains.security.package-checker, com.intellij.beanValidation, org.jetbrains.plugins.docker.gateway, Git4Idea, PerforceDirectPlugin, tanvd.grazi, Docker, intellij.jupyter, XPathView, Karma, com.jetbrains.restClient, com.intellij.spring.integration, com.intellij.javaee.reverseEngineering, com.intellij.mcpServer, org.jetbrains.idea.maven, com.jetbrains.restWebServices, intellij.nextjs, intellij.ktor, org.jetbrains.kotlin, com.intellij.quarkus, intellij.prettierJS, com.intellij.jsp, com.intellij.tasks.timeTracking, com.intellij.plugins.webcomponents, org.jetbrains.plugins.kotlin.jupyter, com.deadlock.scsyntax, com.intellij.liquibase, com.intellij.properties, com.intellij.LineProfiler, org.jetbrains.plugins.terminal, com.intellij.spring.data, org.jetbrains.plugins.node-remote-interpreter, com.intellij.spring, org.intellij.plugins.markdown, org.intellij.groovy, com.intellij.spring.messaging, com.intellij.hibernate, com.intellij.kubernetes, com.intellij.copyright, org.jetbrains.plugins.textmate, tslint, org.jetbrains.plugins.github, Subversion, org.jetbrains.plugins.vue, com.intellij.velocity, NodeJS, org.jetbrains.plugins.gradle, com.intellij.javaee.el, com.intellij.jsonpath, com.intellij.javaee.extensions, com.intellij.ko, com.intellij.spring.boot, idea.plugin.protoeditor, com.intellij.java-i18n, com.intellij.swagger, com.intellij.thymeleaf, com.jetbrains.performancePlugin, com.intellij.micronaut, intellij.webp, org.toml.lang, Refactor-X, com.intellij.javaee, com.intellij.cron, com.jetbrains.plugins.webDeployment, intellij.vitejs, com.intellij.spring.cloud, com.intellij.settingsSync, HtmlTools, com.intellij.javaee.jakarta.data, com.intellij.javaee.jpa, com.jetbrains.sh, Tomcat, com.intellij.react, com.intellij.spring.boot.initializr, com.intellij.java, com.intellij.spring.security, training, com.intellij.zh, com.intellij.flyway, PythonCore, org.jetbrains.plugins.remote-run, com.intellij.tasks, JavaScript, org.jetbrains.debugger.streams, com.intellij.cdi, com.intellij.database, org.jetbrains.plugins.gitlab, com.intellij.freemarker, JBoss, JavaScriptDebugger, org.jetbrains.plugins.yaml, intellij.webpack, org.editorconfig.editorconfigjetbrains, com.intellij.ja, com.intellij.spring.mvc, com.intellij.debugger.collections.visualizer, org.jetbrains.completion.full.line, com.intellij.notebooks.core]
+Is update check: false
+2026-05-07 18:06:34,192 [   4852]   INFO - #o.j.c.f.l.i.s.u.FullLineReducedConfigurable - Settings opening
+2026-05-07 18:06:34,778 [   5438]   WARN - #c.i.i.u.UIThemeBean - Unknown object: CombinedDiff
+2026-05-07 18:06:34,778 [   5438]   WARN - #c.i.i.u.UIThemeBean - Unknown object: BlockBorder
+2026-05-07 18:06:34,958 [   5618]   INFO - #c.i.o.a.i.NonBlockingReadActionImpl - OTel monitoring for NonBlockingReadAction is enabled
+2026-05-07 18:06:36,798 [   7458]   INFO - #c.i.c.m.CodeInsightContextEnabling - multiverse is enabled
+2026-05-07 18:06:38,756 [   9416]   INFO - #c.i.r.OsRegistryConfigProvider - Looking for 'trustedHosts' value in [/Library/Application Support/JetBrains/Gateway/trustedHosts, /Library/Application Support/JetBrains/Gateway/config.json, /Users/cryptogazer/Library/Application Support/JetBrains/Gateway/trustedHosts, /Users/cryptogazer/Library/Application Support/JetBrains/Gateway/config.json]
+2026-05-07 18:06:38,756 [   9416]   INFO - #c.i.r.OsRegistryConfigProvider - OS provided value for 'trustedHosts' is not found
+2026-05-07 18:06:38,826 [   9486]   INFO - #c.i.w.i.i.j.s.JpsGlobalModelSynchronizerImpl - Loading global entities com.intellij.platform.workspace.jps.entities.SdkEntity from files
+2026-05-07 18:06:38,827 [   9487]   INFO - #c.i.w.i.i.j.s.JpsGlobalModelSynchronizerImpl - Loading global entities com.intellij.platform.workspace.jps.entities.LibraryEntity from files
+2026-05-07 18:06:38,831 [   9491]   INFO - #c.i.o.r.i.l.LibraryTablesRegistrarImpl - Table added: application_server_libraries
+2026-05-07 18:06:42,330 [  12990]   INFO - #o.j.i.s.c.SvnIniFile - Could not load /Users/cryptogazer/.subversion/servers
+java.io.FileNotFoundException: /Users/cryptogazer/.subversion/servers (No such file or directory)
+	at java.base/java.io.IoOverNioFileSystem.convertNioToIoExceptionInStreams(IoOverNioFileSystem.java:123)
+	at java.base/java.io.IoOverNioFileSystem.initializeStreamsUsingNio0(IoOverNioFileSystem.java:377)
+	at java.base/java.io.IoOverNioFileSystem.initializeStreamUsingNio(IoOverNioFileSystem.java:344)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:181)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:131)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:186)
+	at java.base/java.net.URL.openStream(URL.java:1325)
+	at org.ini4j.spi.IniSource.<init>(IniSource.java:54)
+	at org.ini4j.spi.AbstractParser.newIniSource(AbstractParser.java:68)
+	at org.ini4j.spi.IniParser.parse(IniParser.java:64)
+	at org.ini4j.Ini.load(Ini.java:110)
+	at org.ini4j.Ini.load(Ini.java:106)
+	at org.jetbrains.idea.svn.config.SvnIniFile.updateGroups(SvnIniFile.kt:68)
+	at org.jetbrains.idea.svn.config.SvnIniFile.updateGroups$default(SvnIniFile.kt:59)
+	at org.jetbrains.idea.svn.config.SvnIniFile.updateGroups(SvnIniFile.kt)
+	at org.jetbrains.idea.svn.SvnConfiguration.getServersFile(SvnConfiguration.java:85)
+	at org.jetbrains.idea.svn.SvnConfiguration.getHttpTimeout(SvnConfiguration.java:69)
+	at org.jetbrains.idea.svn.NetworkSvnConfigurable$createPanel$1$2$1.invoke(NetworkSvnConfigurable.kt:41)
+	at org.jetbrains.idea.svn.NetworkSvnConfigurable$createPanel$1$2$1.invoke(NetworkSvnConfigurable.kt:41)
+	at org.jetbrains.idea.svn.NetworkSvnConfigurable.secondsSpinner$lambda$0(NetworkSvnConfigurable.kt:77)
+	at com.intellij.ui.dsl.builder.impl.MutablePropertyImpl.get(MutablePropertyImpl.kt:11)
+	at com.intellij.ui.dsl.builder.impl.CellImpl.bind$lambda$0(CellImpl.kt:221)
+	at com.intellij.ui.dsl.builder.impl.OnChangeManager.applyBinding(OnChangeManager.kt:56)
+	at com.intellij.ui.dsl.builder.impl.CellImpl.bind(CellImpl.kt:220)
+	at com.intellij.ui.dsl.builder.impl.CellImpl.bind(CellImpl.kt:31)
+	at com.intellij.ui.dsl.builder.SpinnerKt.bindIntValue(spinner.kt:25)
+	at com.intellij.ui.dsl.builder.SpinnerKt.bindIntValue(spinner.kt:13)
+	at org.jetbrains.idea.svn.NetworkSvnConfigurable.secondsSpinner(NetworkSvnConfigurable.kt:77)
+	at org.jetbrains.idea.svn.NetworkSvnConfigurable.createPanel$lambda$0$1(NetworkSvnConfigurable.kt:41)
+	at com.intellij.ui.dsl.builder.impl.PanelImpl.row(PanelImpl.kt:60)
+	at com.intellij.ui.dsl.builder.impl.PanelImpl.row(PanelImpl.kt:46)
+	at com.intellij.ui.dsl.builder.impl.PanelImpl.row(PanelImpl.kt:19)
+	at org.jetbrains.idea.svn.NetworkSvnConfigurable.createPanel$lambda$0(NetworkSvnConfigurable.kt:40)
+	at com.intellij.ui.dsl.builder.BuilderKt.panel(builder.kt:19)
+	at org.jetbrains.idea.svn.NetworkSvnConfigurable.createPanel(NetworkSvnConfigurable.kt:28)
+	at com.intellij.openapi.options.DslConfigurableBase$panel$1.compute(BoundConfigurable.kt:35)
+	at com.intellij.openapi.options.DslConfigurableBase$panel$1.compute(BoundConfigurable.kt:30)
+	at com.intellij.openapi.util.ClearableLazyValue.getValue(ClearableLazyValue.java:43)
+	at com.intellij.openapi.options.DslConfigurableBase.createComponent(BoundConfigurable.kt:43)
+	at com.intellij.openapi.options.ex.ConfigurableWrapper.createComponent(ConfigurableWrapper.java:202)
+	at com.intellij.ide.ui.search.TraverseUIStarterKt.processConfigurables(TraverseUIStarter.kt:445)
+	at com.intellij.ide.ui.search.TraverseUIStarterKt.access$processConfigurables(TraverseUIStarter.kt:1)
+	at com.intellij.ide.ui.search.TraverseUIStarterKt$doBuildSearchableOptions$2.invokeSuspend$lambda$0(TraverseUIStarter.kt:387)
+	at com.intellij.openapi.application.CoroutinesKt.writeIntentReadAction$lambda$0(coroutines.kt:324)
+	at com.intellij.openapi.application.impl.AppImplKt$rethrowCheckedExceptions$2.invoke(appImpl.kt:126)
+	at com.intellij.platform.locking.impl.NestedLocksThreadingSupport.doRunWriteIntentReadAction(NestedLocksThreadingSupport.kt:736)
+	at com.intellij.platform.locking.impl.NestedLocksThreadingSupport.runPreventiveWriteIntentReadAction(NestedLocksThreadingSupport.kt:710)
+	at com.intellij.platform.locking.impl.NestedLocksThreadingSupport.runWriteIntentReadAction(NestedLocksThreadingSupport.kt:664)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteIntentReadAction(ApplicationImpl.java:1185)
+	at com.intellij.openapi.application.CoroutinesKt.writeIntentReadAction(coroutines.kt:324)
+	at com.intellij.ide.ui.search.TraverseUIStarterKt$doBuildSearchableOptions$2.invokeSuspend(TraverseUIStarter.kt:383)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at com.intellij.openapi.application.impl.DispatchedRunnable.run(DispatchedRunnable.kt:42)
+	at com.intellij.openapi.application.TransactionGuardImpl.runWithWritingAllowed(TransactionGuardImpl.java:239)
+	at com.intellij.openapi.application.TransactionGuardImpl.access$100(TransactionGuardImpl.java:25)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:221)
+	at com.intellij.openapi.application.impl.NonBlockingFlushQueue.runNextEvent$lambda$1$1(NonBlockingFlushQueue.kt:337)
+	at com.intellij.concurrency.ThreadContext.resetThreadContext(threadContext.kt:294)
+	at com.intellij.openapi.application.impl.NonBlockingFlushQueue.runNextEvent$lambda$1(NonBlockingFlushQueue.kt:330)
+	at com.intellij.platform.locking.impl.NestedLocksThreadingSupport.tryRunWriteIntentReadAction(NestedLocksThreadingSupport.kt:689)
+	at com.intellij.openapi.application.impl.NonBlockingFlushQueue.runNextEvent(NonBlockingFlushQueue.kt:326)
+	at com.intellij.openapi.application.impl.NonBlockingFlushQueue.flushNow(NonBlockingFlushQueue.kt:305)
+	at com.intellij.openapi.application.impl.NonBlockingFlushQueue.FLUSH_NOW$lambda$0(NonBlockingFlushQueue.kt:167)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:781)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:728)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:722)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:750)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.kt:664)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.kt:517)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$0$0$0(IdeEventQueue.kt:333)
+	at com.intellij.ide.IdeEventQueueKt.performActivity$lambda$1(IdeEventQueue.kt:1065)
+	at com.intellij.openapi.application.TransactionGuardImpl.performActivity(TransactionGuardImpl.java:109)
+	at com.intellij.ide.IdeEventQueueKt.performActivity(IdeEventQueue.kt:1065)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$0(IdeEventQueue.kt:331)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.kt:371)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:207)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:128)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:117)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:105)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:92)
+Caused by: java.nio.file.NoSuchFileException: /Users/cryptogazer/.subversion/servers
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:108)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:114)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newFileChannel(UnixFileSystemProvider.java:224)
+	at com.intellij.platform.core.nio.fs.DelegatingFileSystemProvider.newFileChannel(DelegatingFileSystemProvider.java:90)
+	at java.base/java.io.IoOverNioFileSystem.initializeStreamsUsingNio0(IoOverNioFileSystem.java:359)
+	... 84 more
+2026-05-07 18:06:42,557 [  13217]   WARN - #c.i.u.j.JBCefApp - JCEF is manually disabled in headless env via 'ide.browser.jcef.headless.enabled=false'
+2026-05-07 18:06:42,592 [  13252]   INFO - #o.j.p.t.TerminalOptionsProvider - Initialized TerminalOptionsProvider.cursorShape value to BLOCK
+2026-05-07 18:06:42,758 [  13418]   INFO - #c.i.d.u.SqlDialects - SQL dialects initialized in 8 ms
+2026-05-07 18:06:42,813 [  13473]   INFO - #o.j.k.i.script - [KOTLIN_SCRIPTING] Loading script definitions: classes=[], classpath=[]
+2026-05-07 18:06:43,029 [  13689]   WARN - #c.i.o.p.i.JavaHomeFinderMac - Failed to get Java home path for ~/.dotnet/tools
+com.intellij.platform.eel.path.EelPathException: `~/.dotnet/tools`: Not a valid absolute path
+	at com.intellij.platform.eel.path.EelPath$Companion.parse(EelPath.kt:27)
+	at com.intellij.openapi.projectRoots.impl.EelSystemInfoProvider.getPath(JavaHomeFinderEel.kt:33)
+	at com.intellij.openapi.projectRoots.impl.JavaHomeFinderBasic.findInPATH(JavaHomeFinderBasic.java:150)
+	at com.intellij.openapi.projectRoots.impl.JavaHomeFinderBasic.findExistingJdks(JavaHomeFinderBasic.java:109)
+	at com.intellij.openapi.projectRoots.impl.JavaHomeFinderBasic.findExistingJdkEntries(JavaHomeFinderBasic.java:124)
+	at com.intellij.openapi.projectRoots.impl.JavaHomeFinder.findJdks(JavaHomeFinder.java:129)
+	at com.intellij.openapi.projectRoots.impl.JavaHomeFinder.findJdks(JavaHomeFinder.java:125)
+	at com.intellij.openapi.projectRoots.impl.JavaHomeFinder.suggestHomePaths(JavaHomeFinder.java:100)
+	at com.intellij.openapi.projectRoots.impl.JavaSdkImpl.suggestHomePaths(JavaSdkImpl.java:219)
+	at com.intellij.openapi.projectRoots.impl.JavaSdkImpl.suggestHomePaths(JavaSdkImpl.java:214)
+	at com.intellij.openapi.projectRoots.impl.DefaultJdkConfiguratorImpl.guessJavaHome(DefaultJdkConfiguratorImpl.java:13)
+	at com.intellij.openapi.projectRoots.impl.JavaAwareProjectJdkTableImpl.guessJdk(JavaAwareProjectJdkTableImpl.java:59)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$1.run(CoreProgressManager.java:355)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.startTask(CoreProgressManager.java:534)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.startTask(ProgressManagerImpl.java:180)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressSynchronously$10(CoreProgressManager.java:624)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$new$0(ProgressRunner.java:89)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:268)
+	at com.intellij.openapi.progress.ProgressManager.lambda$runProcess$0(ProgressManager.java:98)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$1(CoreProgressManager.java:260)
+	at com.intellij.platform.diagnostic.telemetry.helpers.TraceKt.use(trace.kt:44)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:259)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$executeProcessUnderProgress$14(CoreProgressManager.java:717)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:792)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computeUnderProgress(CoreProgressManager.java:748)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:716)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:75)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:240)
+	at com.intellij.openapi.progress.ProgressManager.runProcess(ProgressManager.java:98)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$5(ProgressRunner.java:268)
+	at com.intellij.openapi.progress.impl.ProgressRunner$ProgressRunnable.run(ProgressRunner.java:546)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$launchTask$18(ProgressRunner.java:501)
+	at com.intellij.concurrency.ThreadContext.installThreadContext(threadContext.kt:305)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$launchTask$19(ProgressRunner.java:500)
+	at com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke(propagation.kt:167)
+	at com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke(propagation.kt:167)
+	at com.intellij.util.concurrency.ChildContext.runInChildContext(propagation.kt:173)
+	at com.intellij.util.concurrency.ChildContext.runInChildContext(propagation.kt:167)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$launchTask$20(ProgressRunner.java:497)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:735)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:732)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:732)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-05-07 18:06:43,470 [  14130]   INFO - #c.i.w.i.i.GlobalWorkspaceModel - Global model updated to version 2 in 8 ms: Adding SDK: 25 JavaSDK
+2026-05-07 18:06:43,515 [  14175]   INFO - #c.i.k.a.KubernetesApiProvider - Configuration refresh started
+2026-05-07 18:06:43,519 [  14179]   INFO - #c.i.k.a.KubernetesApiProvider - Configuration refresh finished
+2026-05-07 18:06:43,749 [  14409]   WARN - #c.i.o.u.BrowseFolderRunnable - multiple selection not supported
+2026-05-07 18:06:43,922 [  14582]   INFO - STDOUT - Found 407 configurables
+2026-05-07 18:06:44,341 [  15001]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - RecentProjects connection failed with AnnotatedSocketException(SocketException) (No such file or directory: /var/folders/d8/2f6k63315tj_d5vwkp13wht40000gn/T/jb.station.cryptogazer.sock)
+2026-05-07 18:06:44,698 [  15358]   INFO - #c.i.c.p.p.ProvisionedCodeWithMeEnterpriseConfiguration - No JBIDES plugin found. Using public/self-configured CWM.
+2026-05-07 18:06:45,138 [  15798]   INFO - #c.i.r.OsRegistryConfigProvider - Looking for 'isCodeWithMeHostEnabled' value in [/Library/Application Support/JetBrains/CodeWithMe/isCodeWithMeHostEnabled, /Library/Application Support/JetBrains/CodeWithMe/config.json, /Users/cryptogazer/Library/Application Support/JetBrains/CodeWithMe/isCodeWithMeHostEnabled, /Users/cryptogazer/Library/Application Support/JetBrains/CodeWithMe/config.json]
+2026-05-07 18:06:45,191 [  15851]   INFO - #c.i.r.OsRegistryConfigProvider - OS provided value for 'isCodeWithMeHostEnabled' is not found
+2026-05-07 18:06:45,191 [  15851]   INFO - #c.i.r.OsRegistryConfigProvider - Looking for 'lobbyServerUrl' value in [/Library/Application Support/JetBrains/CodeWithMe/lobbyServerUrl, /Library/Application Support/JetBrains/CodeWithMe/config.json, /Users/cryptogazer/Library/Application Support/JetBrains/CodeWithMe/lobbyServerUrl, /Users/cryptogazer/Library/Application Support/JetBrains/CodeWithMe/config.json]
+2026-05-07 18:06:45,191 [  15851]   INFO - #c.i.r.OsRegistryConfigProvider - OS provided value for 'lobbyServerUrl' is not found
+2026-05-07 18:06:46,938 [  17598]   INFO - STDOUT - save to /Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/build/tmp/buildSearchableOptions
+2026-05-07 18:06:47,131 [  17791]   INFO - #c.i.w.i.i.j.s.JpsGlobalModelSynchronizerImpl - Saving global entities com.intellij.platform.workspace.jps.entities.SdkEntity to files
+2026-05-07 18:06:47,198 [  17858]   INFO - #c.i.w.i.i.j.s.JpsGlobalModelSynchronizerImpl - Saving global entities com.intellij.platform.workspace.jps.entities.LibraryEntity to files
+2026-05-07 18:06:47,451 [  18111]   INFO - #c.i.c.ComponentStoreImpl - Saving default projectCodeInsightWorkspaceSettings took 49 ms, InspectionProjectProfileManager took 17 ms, Kotlin2JsCompilerArguments took 64 ms, KubernetesApiProvider took 12 ms
+2026-05-07 18:06:47,458 [  18118]   INFO - #c.i.a.o.PathMacrosImpl - Saved path macros: {MAVEN_REPOSITORY=/Users/cryptogazer/.m2/repository}
+2026-05-07 18:06:47,472 [  18132]   INFO - #c.i.c.ComponentStoreImpl - Saving appCompletionMLRankingSettings took 14 ms, DownloadModelConsentState took 15 ms, EditorSettings took 15 ms, FeatureUsageStatistics took 33 ms
+2026-05-07 18:06:47,490 [  18150]   INFO - #c.i.i.s.EventLogApplicationLifecycleListener - Statistics. Don't start external uploader because there are no enabled logger providers
+2026-05-07 18:06:47,491 [  18151]   INFO - #c.i.i.s.e.u.EventLogExternalUploader - Statistics. Don't start external uploader because sending logs is disabled for all recorders
+2026-05-07 18:06:47,500 [  18160]   INFO - #c.i.o.f.i.FileTypeDetectionService - 225 auto-detected files. Detection took 44 ms
+2026-05-07 18:06:57,596 [  28256]   WARN - #c.i.i.shutdown - Application Application (headless) (command line) (RA allowed) (exit in progress): scope was not completed in 10s.
+
+- "ApplicationImpl@1302792829 container":supervisor:ChildScope{Cancelling} [Kernel@ivhvbehmvd3e13sm7ol6, Rete(abortOnError=false, commands=capacity=2147483647,data=[onReceive], reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36, dbSource=ReteDbSource(reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36)), DbSourceContextElement(kernel Kernel@ivhvbehmvd3e13sm7ol6), ComponentManager(ApplicationImpl@1302792829), com.intellij.codeWithMe.ClientIdContextElementPrecursor]
+	- "(ApplicationImpl@1302792829 x tanvd.grazi)":supervisor:ChildScope{Cancelling} [Kernel@ivhvbehmvd3e13sm7ol6, Rete(abortOnError=false, commands=capacity=2147483647,data=[onReceive], reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36, dbSource=ReteDbSource(reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36)), DbSourceContextElement(kernel Kernel@ivhvbehmvd3e13sm7ol6), ComponentManager(ApplicationImpl@1302792829), com.intellij.codeWithMe.ClientIdContextElementPrecursor]
+		- "com.intellij.grazie.cloud.license.GrazieLoginManager":supervisor:ChildScope{Cancelling} [Kernel@ivhvbehmvd3e13sm7ol6, Rete(abortOnError=false, commands=capacity=2147483647,data=[onReceive], reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36, dbSource=ReteDbSource(reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36)), DbSourceContextElement(kernel Kernel@ivhvbehmvd3e13sm7ol6), ComponentManager(ApplicationImpl@1302792829), com.intellij.codeWithMe.ClientIdContextElementPrecursor]
+			- "com.intellij.grazie.cloud.license.GrazieLoginManager#4100":StandaloneCoroutine{Cancelling}, state: RUNNING [Kernel@ivhvbehmvd3e13sm7ol6, Rete(abortOnError=false, commands=capacity=2147483647,data=[onReceive], reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36, dbSource=ReteDbSource(reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36)), DbSourceContextElement(kernel Kernel@ivhvbehmvd3e13sm7ol6), ComponentManager(ApplicationImpl@1302792829), com.intellij.codeWithMe.ClientIdContextElementPrecursor, CoroutineId(4100), Dispatchers.Default]
+				at kotlinx.coroutines.flow.internal.ChannelFlow$collect$2.invokeSuspend(ChannelFlow.kt:119)
+				at com.intellij.grazie.cloud.license.GrazieLoginManager$2.invokeSuspend(GrazieLoginManager.kt:88)
+				- "com.intellij.grazie.cloud.license.GrazieLoginManager#4102":ProducerCoroutine{Cancelling}, state: RUNNING [Kernel@ivhvbehmvd3e13sm7ol6, Rete(abortOnError=false, commands=capacity=2147483647,data=[onReceive], reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36, dbSource=ReteDbSource(reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36)), DbSourceContextElement(kernel Kernel@ivhvbehmvd3e13sm7ol6), ComponentManager(ApplicationImpl@1302792829), com.intellij.codeWithMe.ClientIdContextElementPrecursor, CoroutineId(4102), Dispatchers.Default]
+					at java.base/jdk.internal.misc.Unsafe.park(Native Method)
+					at java.base/java.util.concurrent.locks.LockSupport.park(LockSupport.java:221)
+					at java.base/java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1864)
+					at java.base/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:4013)
+					at java.base/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3961)
+					at java.base/java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1898)
+					at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2072)
+					at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+					at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+					at com.intellij.ide.e.l.ew.j(ew.java:295)
+					at com.intellij.e.u.getIdToken(u.java:45)
+					at com.intellij.grazie.cloud.license.JbaToken$Companion.obtain(JbaToken.kt:8)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager.computeLoginState(GrazieLoginManager.kt:155)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager.computeLoginState$default(GrazieLoginManager.kt:147)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager$2$1.invokeSuspend(GrazieLoginManager.kt:89)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager$2$1.invoke(GrazieLoginManager.kt)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager$2$1.invoke(GrazieLoginManager.kt)
+					at kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1.invokeSuspend(Merge.kt:213)
+					at kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1.invoke(Merge.kt)
+					at kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1.invoke(Merge.kt)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2.invokeSuspend(Merge.kt:30)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2.invoke(Merge.kt)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2.invoke(Merge.kt)
+					at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:20)
+					at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:360)
+					at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+					at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:52)
+					at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+					at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:43)
+					at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1.emit(Merge.kt:29)
+					at kotlinx.coroutines.flow.StateFlowImpl.collect(StateFlow.kt:406)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3.invokeSuspend(Merge.kt:23)
+					at kotlinx.coroutines.flow.internal.ChannelFlow$collectToFun$1.invokeSuspend(ChannelFlow.kt:56)
+					- "com.intellij.grazie.cloud.license.GrazieLoginManager#4108":StandaloneCoroutine{Cancelling}, state: RUNNING [Kernel@ivhvbehmvd3e13sm7ol6, Rete(abortOnError=false, commands=capacity=2147483647,data=[onReceive], reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36, dbSource=ReteDbSource(reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36)), DbSourceContextElement(kernel Kernel@ivhvbehmvd3e13sm7ol6), ComponentManager(ApplicationImpl@1302792829), com.intellij.codeWithMe.ClientIdContextElementPrecursor, CoroutineId(4108), Dispatchers.Default]
+			- "com.intellij.grazie.cloud.license.GrazieLoginManager#4101":StandaloneCoroutine{Cancelling}, state: RUNNING [Kernel@ivhvbehmvd3e13sm7ol6, Rete(abortOnError=false, commands=capacity=2147483647,data=[onReceive], reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36, dbSource=ReteDbSource(reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36)), DbSourceContextElement(kernel Kernel@ivhvbehmvd3e13sm7ol6), ComponentManager(ApplicationImpl@1302792829), com.intellij.codeWithMe.ClientIdContextElementPrecursor, CoroutineId(4101), Dispatchers.Default]
+				at kotlinx.coroutines.flow.internal.ChannelFlow$collect$2.invokeSuspend(ChannelFlow.kt:119)
+				at com.intellij.grazie.cloud.license.GrazieLoginManager$3.invokeSuspend(GrazieLoginManager.kt:97)
+				- "com.intellij.grazie.cloud.license.GrazieLoginManager#4128":ProducerCoroutine{Cancelling}, state: RUNNING [Kernel@ivhvbehmvd3e13sm7ol6, Rete(abortOnError=false, commands=capacity=2147483647,data=[onReceive], reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36, dbSource=ReteDbSource(reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36)), DbSourceContextElement(kernel Kernel@ivhvbehmvd3e13sm7ol6), ComponentManager(ApplicationImpl@1302792829), com.intellij.codeWithMe.ClientIdContextElementPrecursor, CoroutineId(4128), Dispatchers.Default]
+					at java.base/jdk.internal.misc.Unsafe.park(Native Method)
+					at java.base/java.util.concurrent.locks.LockSupport.park(LockSupport.java:221)
+					at java.base/java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1864)
+					at java.base/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:4013)
+					at java.base/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3961)
+					at java.base/java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1898)
+					at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2072)
+					at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+					at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+					at com.intellij.ide.e.l.ew.j(ew.java:295)
+					at com.intellij.e.u.getIdToken(u.java:45)
+					at com.intellij.grazie.cloud.license.JbaToken$Companion.obtain(JbaToken.kt:8)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager.computeLoginState(GrazieLoginManager.kt:155)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager.computeLoginState$default(GrazieLoginManager.kt:147)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager$3$1.invokeSuspend(GrazieLoginManager.kt:99)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager$3$1.invoke(GrazieLoginManager.kt)
+					at com.intellij.grazie.cloud.license.GrazieLoginManager$3$1.invoke(GrazieLoginManager.kt)
+					at kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1.invokeSuspend(Merge.kt:213)
+					at kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1.invoke(Merge.kt)
+					at kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1.invoke(Merge.kt)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2.invokeSuspend(Merge.kt:30)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2.invoke(Merge.kt)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2.invoke(Merge.kt)
+					at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:20)
+					at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:360)
+					at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+					at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:52)
+					at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+					at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:43)
+					at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1.emit(Merge.kt:29)
+					at kotlinx.coroutines.flow.internal.FlowValueWrapperInternalKt.emitInternal(FlowValueWrapperInternal.kt:39)
+					at kotlinx.coroutines.flow.StateFlowImpl.collect(StateFlow.kt:406)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3.invokeSuspend(Merge.kt:23)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3.invoke(Merge.kt)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3.invoke(Merge.kt)
+					at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:44)
+					at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:285)
+					at kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest.flowCollect(Merge.kt:21)
+					at kotlinx.coroutines.flow.internal.ChannelFlowOperator.collectTo$suspendImpl(ChannelFlow.kt:153)
+					at kotlinx.coroutines.flow.internal.ChannelFlowOperator.collectTo(ChannelFlow.kt)
+					at kotlinx.coroutines.flow.internal.ChannelFlow$collectToFun$1.invokeSuspend(ChannelFlow.kt:56)
+					- "com.intellij.grazie.cloud.license.GrazieLoginManager#4129":StandaloneCoroutine{Cancelling}, state: RUNNING [Kernel@ivhvbehmvd3e13sm7ol6, Rete(abortOnError=false, commands=capacity=2147483647,data=[onReceive], reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36, dbSource=ReteDbSource(reteState=kotlinx.coroutines.flow.StateFlowImpl@76707e36)), DbSourceContextElement(kernel Kernel@ivhvbehmvd3e13sm7ol6), ComponentManager(ApplicationImpl@1302792829), com.intellij.codeWithMe.ClientIdContextElementPrecursor, CoroutineId(4129), Dispatchers.Default]
+
+2026-05-07 18:06:57,614 [  28274]   INFO - #o.j.i.BuiltInServer - web server stopped
+2026-05-07 18:06:57,642 [  28302]   INFO - #c.i.u.i.FileBasedIndexImpl - Index dispose started
+2026-05-07 18:06:57,647 [  28307]   INFO - #c.i.u.i.PersistentDirtyFilesQueue - Dirty file ids stored. Size: 0. Index: 0 Path: /Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/system/index/dirty-file-ids
+2026-05-07 18:06:57,689 [  28349]   INFO - #c.i.p.s.StubIndexImpl - StubIndexExtension-s were unloaded
+2026-05-07 18:06:57,689 [  28349]   INFO - #c.i.p.s.SerializationManagerImpl - Start shutting down /Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/system/index/rep.names
+2026-05-07 18:06:57,689 [  28349]   INFO - #c.i.p.s.SerializationManagerImpl - Finished shutting down /Users/cryptogazer/Desktop/PABLO/Hackathons/WhyLine/plugin/.intellijPlatform/sandbox/whyline-plugin/IU-2025.3.4/system/index/rep.names
+2026-05-07 18:06:57,692 [  28352]   INFO - #c.i.u.i.FileBasedIndexImpl - Index dispose completed in 51ms.
+2026-05-07 18:06:57,827 [  28487]   INFO - #c.i.o.v.n.p.PersistentFSImpl - VFS dispose started
+2026-05-07 18:06:57,827 [  28487]   INFO - #c.i.o.v.n.p.FSRecordsImpl - VFS closing
+2026-05-07 18:06:57,828 [  28488]   INFO - #c.i.o.v.n.p.PersistentFSImpl - VFS dispose completed in 1 ms.
+2026-05-07 18:06:57,941 [  28601]   INFO - #c.i.p.i.b.AppStarter - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------

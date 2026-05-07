@@ -1,17 +1,37 @@
+<!-- Plugin Configuration File: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.whyline.plugin</id>
     <name>WhyLine</name>
-    <vendor>WhyLine</vendor>
+    <vendor url="https://whyline.dev">WhyLine</vendor>
 
-    <description>
-        Answers "why did this code change?" directly in the IDE.
-        Select a code range, right-click, choose WhyLine: Explain Why,
-        and see the linked Jira ticket with a short explanation in the Tool Window.
-    </description>
+    <description><![CDATA[
+        <p><b>WhyLine</b> answers the question "why did this code change?" without leaving the IDE.</p>
+
+        <p>Select any range of code, right-click → <b>WhyLine: Explain Why</b>, and instantly see:</p>
+        <ul>
+            <li>The linked Jira ticket and a short human-readable explanation</li>
+            <li>Confidence level (high / medium / low)</li>
+            <li>Direct link to the ticket in your browser</li>
+        </ul>
+
+        <p>WhyLine reads local Git history (blame, commits, diffs) and matches it against your Jira
+        project using a multi-signal scoring engine — no native Jira-Git integration required.
+        Jira keys in commit messages are optional: WhyLine works via semantic matching even without them.</p>
+
+        <p><b>Optional LLM mode:</b> provide your own OpenAI API key in settings to enable
+        GPT-powered reranking and 2–4 sentence natural language explanations.</p>
+
+        <h3>Setup</h3>
+        <ol>
+            <li>Open <b>Settings → Tools → WhyLine</b></li>
+            <li>Fill in your Jira credentials (email + API token + base URL)</li>
+            <li>Optionally add your Jira project keys (comma-separated) to narrow search</li>
+            <li>Optionally add an OpenAI API key and enable LLM features</li>
+        </ol>
+    ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
-    <depends>Git4Idea</depends>
 
     <extensions defaultExtensionNs="com.intellij">
 
@@ -40,7 +60,7 @@
         <!-- Tool Window: shows analysis results -->
         <toolWindow
             id="WhyLine"
-            anchor="bottom"
+            anchor="right"
             factoryClass="com.whyline.plugin.toolwindow.WhyToolWindowFactory"
             icon="/icons/whyline.svg"/>
 

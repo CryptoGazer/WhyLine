@@ -6,25 +6,18 @@ import com.intellij.credentialStore.generateServiceName
 import com.intellij.ide.passwordSafe.PasswordSafe
 import com.intellij.openapi.application.ApplicationManager
 
-/**
- * Stores and retrieves the user's OpenAI API key via JetBrains Password Safe.
- * The key is NEVER written to plugin state XML, project files, or PostgreSQL.
- */
 class WhyCredentialService {
 
-    private fun credentialAttributes(): CredentialAttributes =
-        CredentialAttributes(generateServiceName("WhyLine", "openai-api-key"))
+    private fun openAiAttrs() = CredentialAttributes(generateServiceName("WhyLine", "openai-api-key"))
+    private fun jiraAttrs()   = CredentialAttributes(generateServiceName("WhyLine", "jira-api-token"))
 
-    fun saveApiKey(key: String) {
-        PasswordSafe.instance.set(credentialAttributes(), Credentials("whyline", key))
-    }
+    fun saveOpenAiKey(key: String) = PasswordSafe.instance.set(openAiAttrs(), Credentials("whyline", key))
+    fun getOpenAiKey(): String?    = PasswordSafe.instance.get(openAiAttrs())?.getPasswordAsString()
+    fun clearOpenAiKey()           = PasswordSafe.instance.set(openAiAttrs(), null)
 
-    fun getApiKey(): String? =
-        PasswordSafe.instance.get(credentialAttributes())?.getPasswordAsString()
-
-    fun clearApiKey() {
-        PasswordSafe.instance.set(credentialAttributes(), null)
-    }
+    fun saveJiraToken(token: String) = PasswordSafe.instance.set(jiraAttrs(), Credentials("whyline", token))
+    fun getJiraToken(): String?      = PasswordSafe.instance.get(jiraAttrs())?.getPasswordAsString()
+    fun clearJiraToken()             = PasswordSafe.instance.set(jiraAttrs(), null)
 
     companion object {
         fun getInstance(): WhyCredentialService =
